@@ -25,7 +25,10 @@ To export the book to word follow the code below from [Edd Berry](https://www.ed
 ```{r word, eval=FALSE}
 bookdown::preview_chapter("01-intro.Rmd",
                 output_format = "bookdown::word_document2",
-                output_file = paste0("thesis-intro-", format(Sys.Date(), ("%d-%m-%y")), ".docx"),
+                output_file = paste0("thesis-intro-", 
+                                     format(Sys.Date(), 
+                                            ("%d-%m-%y")), 
+                                     ".docx"),
                 output_dir = "chapter-previews")
 ```
 
@@ -41,7 +44,10 @@ See [Custom Word Templates](https://bookdown.org/yihui/rmarkdown-cookbook/word-t
 ```{r, eval=FALSE}
 bookdown::preview_chapter("01-intro.Rmd",
                 output_format = "bookdown::word_document2",
-                output_file = paste0("thesis-intro-", format(Sys.Date(), ("%d-%m-%y")), ".docx"),
+                output_file = paste0("thesis-intro-", 
+                                     format(Sys.Date(), 
+                                            ("%d-%m-%y")), 
+                                     ".docx"),
                 output_dir = "chapter-previews",
                 output_options = list(reference_docx = "word-style-ref.docx"))
 ```

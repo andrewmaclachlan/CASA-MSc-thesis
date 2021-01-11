@@ -246,8 +246,11 @@ div.csl-indent {
 <p>To export the book to word follow the code below from <a href="https://www.eddjberry.com/post/writing-your-thesis-with-bookdown/">Edd Berry</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="bookdown-basics.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;01-intro.Rmd&quot;</span>,</span>
 <span id="cb1-2"><a href="bookdown-basics.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_format =</span> <span class="st">&quot;bookdown::word_document2&quot;</span>,</span>
-<span id="cb1-3"><a href="bookdown-basics.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_file =</span> <span class="fu">paste0</span>(<span class="st">&quot;thesis-intro-&quot;</span>, <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), (<span class="st">&quot;%d-%m-%y&quot;</span>)), <span class="st">&quot;.docx&quot;</span>),</span>
-<span id="cb1-4"><a href="bookdown-basics.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_dir =</span> <span class="st">&quot;chapter-previews&quot;</span>)</span></code></pre></div>
+<span id="cb1-3"><a href="bookdown-basics.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_file =</span> <span class="fu">paste0</span>(<span class="st">&quot;thesis-intro-&quot;</span>, </span>
+<span id="cb1-4"><a href="bookdown-basics.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                                     <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), </span>
+<span id="cb1-5"><a href="bookdown-basics.html#cb1-5" aria-hidden="true" tabindex="-1"></a>                                            (<span class="st">&quot;%d-%m-%y&quot;</span>)), </span>
+<span id="cb1-6"><a href="bookdown-basics.html#cb1-6" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">&quot;.docx&quot;</span>),</span>
+<span id="cb1-7"><a href="bookdown-basics.html#cb1-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_dir =</span> <span class="st">&quot;chapter-previews&quot;</span>)</span></code></pre></div>
 <p>You can also setup a reference document if you wish that word will style it on. To do so:</p>
 <ol style="list-style-type: decimal">
 <li>export to word using the code above.</li>
@@ -258,9 +261,12 @@ div.csl-indent {
 <p>See <a href="https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html">Custom Word Templates</a> for more detailed instructions.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="bookdown-basics.html#cb2-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;01-intro.Rmd&quot;</span>,</span>
 <span id="cb2-2"><a href="bookdown-basics.html#cb2-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_format =</span> <span class="st">&quot;bookdown::word_document2&quot;</span>,</span>
-<span id="cb2-3"><a href="bookdown-basics.html#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_file =</span> <span class="fu">paste0</span>(<span class="st">&quot;thesis-intro-&quot;</span>, <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), (<span class="st">&quot;%d-%m-%y&quot;</span>)), <span class="st">&quot;.docx&quot;</span>),</span>
-<span id="cb2-4"><a href="bookdown-basics.html#cb2-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_dir =</span> <span class="st">&quot;chapter-previews&quot;</span>,</span>
-<span id="cb2-5"><a href="bookdown-basics.html#cb2-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_options =</span> <span class="fu">list</span>(<span class="at">reference_docx =</span> <span class="st">&quot;word-style-ref.docx&quot;</span>))</span></code></pre></div>
+<span id="cb2-3"><a href="bookdown-basics.html#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_file =</span> <span class="fu">paste0</span>(<span class="st">&quot;thesis-intro-&quot;</span>, </span>
+<span id="cb2-4"><a href="bookdown-basics.html#cb2-4" aria-hidden="true" tabindex="-1"></a>                                     <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), </span>
+<span id="cb2-5"><a href="bookdown-basics.html#cb2-5" aria-hidden="true" tabindex="-1"></a>                                            (<span class="st">&quot;%d-%m-%y&quot;</span>)), </span>
+<span id="cb2-6"><a href="bookdown-basics.html#cb2-6" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">&quot;.docx&quot;</span>),</span>
+<span id="cb2-7"><a href="bookdown-basics.html#cb2-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_dir =</span> <span class="st">&quot;chapter-previews&quot;</span>,</span>
+<span id="cb2-8"><a href="bookdown-basics.html#cb2-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_options =</span> <span class="fu">list</span>(<span class="at">reference_docx =</span> <span class="st">&quot;word-style-ref.docx&quot;</span>))</span></code></pre></div>
 <p>You can also export the whole document as word by clicking Build Book and selecting it. However, note that tables built with <code>Kabble</code> don’t work, so you have the following options</p>
 <ul>
 <li>create the html (gitbook) and copy the tables into word</li>
@@ -362,7 +368,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["CASA Thesis.pdf", "https://github.com/rstudio/bookdown-demo/raw/master/01-intro.Rmd"],
+"download": ["CASA-Thesis.pdf", "https://github.com/rstudio/bookdown-demo/raw/master/01-intro.Rmd"],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
