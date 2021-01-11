@@ -2,7 +2,6 @@ fig:nice-fig
 tab:nice-tab
 eq:test
 fig:methodsflow
-title
 bookdown-basics
 structure
 building-the-book
