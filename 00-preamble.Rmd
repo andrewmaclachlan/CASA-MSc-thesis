@@ -8,14 +8,6 @@ library(knitr)
 
 
 `r if (knitr:::is_html_output()) '
-# Abstract {-}
-'`
-`r if (knitr:::is_latex_output()) '
-# Abstract {.unlisted .unnumbered}
-'`
-Some abstract text
-
-`r if (knitr:::is_html_output()) '
 # Declaration{-}
 '`
 `r if (knitr:::is_latex_output()) '

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.11)  11 JAN 2021 21:01
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.11)  11 JAN 2021 21:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1487,7 +1487,7 @@ Chapter 1.
 ] [2] [3] [4] [5] [6]
 Chapter 2.
 
-Overfull \hbox (7.43431pt too wide) in paragraph at lines 375--376
+Overfull \hbox (7.43431pt too wide) in paragraph at lines 377--378
 []\TU/lmr/m/n/12 Just reference the label we gave to the section….see Chapter \
 TU/lmtt/m/n/12 \@ref(crossref)
  []
@@ -1498,42 +1498,42 @@ TU/lmtt/m/n/12 \@ref(crossref)
 File: CASA-Thesis_files/figure-latex/nice-fig-1.pdf Graphic file (type pdf)
 <use CASA-Thesis_files/figure-latex/nice-fig-1.pdf>
 
-Underfull \hbox (badness 2443) in paragraph at lines 390--391
+Underfull \hbox (badness 2443) in paragraph at lines 392--393
 []\TU/lmr/m/n/12 To cross reference this just include Figure \TU/lmtt/m/n/12 \@
 ref(fig:nice-fig) \TU/lmr/m/n/12 which
  []
 
 [8] [9]
-Underfull \hbox (badness 2080) in paragraph at lines 464--466
+Underfull \hbox (badness 2080) in paragraph at lines 466--468
 []\TU/lmr/m/n/12 Download the latest release — the \TU/lmtt/m/n/12 .xpi \TU/lmr
 /m/n/12 file: []$[][][][][] [] [] [] [][][][][][] [] [][][] []
  []
 
 [10]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 497.
+(Font)              scaled to size 5.0pt on input line 499.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 497.
+(Font)              scaled to size 5.00046pt on input line 499.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 497.
+(Font)              scaled to size 4.99947pt on input line 499.
 [11]
 Chapter 3.
 [12
 
 ]
-Underfull \hbox (badness 2302) in paragraph at lines 533--534
+Underfull \hbox (badness 2302) in paragraph at lines 535--536
 []\TU/lmr/m/n/12 You can also provide an attribution at the footer of the quote
  using
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 533--534
+Underfull \hbox (badness 1472) in paragraph at lines 535--536
 \TU/lmtt/m/n/12 tufte::quote_-footer()\TU/lmr/m/n/12 , either a name or a refer
 ence. You’ll need to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 533--534
+Underfull \hbox (badness 10000) in paragraph at lines 535--536
 \TU/lmtt/m/n/12 tufte::quote_-footer([]--- Joe Martin[]) \TU/lmr/m/n/12 or \TU/
 lmtt/m/n/12 > [include only r here]
  []

@@ -33,4 +33,19 @@ description: "My thesis"
 always_allow_html: yes
 ---
 
+```{=latex}
+\pagenumbering{roman}
+```
+
+```{r include=FALSE}
+library(knitr)
+```
+
+`r if (knitr:::is_html_output()) '
+# Abstract {-}
+'`
+`r if (knitr:::is_latex_output()) '
+# Abstract {.unlisted .unnumbered}
+'`
+Some abstract text
 
