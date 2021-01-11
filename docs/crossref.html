@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Cross referencing | CASA dissertation using Bookdown</title>
+  <meta name="description" content="My thesis" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Cross referencing | CASA dissertation using Bookdown" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="My thesis" />
+  <meta name="github-repo" content="andrewmaclachlan/CASA0005repo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Cross referencing | CASA dissertation using Bookdown" />
+  
+  <meta name="twitter:description" content="My thesis" />
+  
+
+
+
+<meta name="date" content="2021-01-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bookdown-basics.html"/>
+<link rel="next" href="equations-and-direct-quotes.html"/>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://www.ucl.ac.uk/bartlett/casa/"><img src="general_images/casa_logo.jpg"></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="declaration.html"><a href="declaration.html"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="abbreviations.html"><a href="abbreviations.html"><i class="fa fa-check"></i>Abbreviations</a></li>
+<li class="chapter" data-level="1" data-path="bookdown-basics.html"><a href="bookdown-basics.html"><i class="fa fa-check"></i><b>1</b> Bookdown basics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="bookdown-basics.html"><a href="bookdown-basics.html#structure"><i class="fa fa-check"></i><b>1.1</b> Structure</a></li>
+<li class="chapter" data-level="1.2" data-path="bookdown-basics.html"><a href="bookdown-basics.html#building-the-book"><i class="fa fa-check"></i><b>1.2</b> Building the book</a></li>
+<li class="chapter" data-level="1.3" data-path="bookdown-basics.html"><a href="bookdown-basics.html#yamls"><i class="fa fa-check"></i><b>1.3</b> YAMLs</a></li>
+<li class="chapter" data-level="1.4" data-path="bookdown-basics.html"><a href="bookdown-basics.html#formatting"><i class="fa fa-check"></i><b>1.4</b> Formatting</a></li>
+<li class="chapter" data-level="1.5" data-path="bookdown-basics.html"><a href="bookdown-basics.html#index-file"><i class="fa fa-check"></i><b>1.5</b> Index file</a></li>
+<li class="chapter" data-level="1.6" data-path="bookdown-basics.html"><a href="bookdown-basics.html#preamble"><i class="fa fa-check"></i><b>1.6</b> Preamble</a></li>
+<li class="chapter" data-level="1.7" data-path="bookdown-basics.html"><a href="bookdown-basics.html#change-this-to-a-thesis"><i class="fa fa-check"></i><b>1.7</b> Change this to a thesis</a></li>
+<li class="chapter" data-level="1.8" data-path="bookdown-basics.html"><a href="bookdown-basics.html#adding-a-pdf-to-the-end-of-your-document"><i class="fa fa-check"></i><b>1.8</b> Adding a pdf to the end of your document</a></li>
+<li class="chapter" data-level="1.9" data-path="bookdown-basics.html"><a href="bookdown-basics.html#writing-code"><i class="fa fa-check"></i><b>1.9</b> Writing code</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="crossref.html"><a href="crossref.html"><i class="fa fa-check"></i><b>2</b> Cross referencing</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="crossref.html"><a href="crossref.html#chapters-or-sections"><i class="fa fa-check"></i><b>2.1</b> Chapters or sections</a></li>
+<li class="chapter" data-level="2.2" data-path="crossref.html"><a href="crossref.html#figures-tables-even-code-chunks"><i class="fa fa-check"></i><b>2.2</b> Figures, tables, even code chunks</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="crossref.html"><a href="crossref.html#figures"><i class="fa fa-check"></i><b>2.2.1</b> Figures</a></li>
+<li class="chapter" data-level="2.2.2" data-path="crossref.html"><a href="crossref.html#tables"><i class="fa fa-check"></i><b>2.2.2</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="crossref.html"><a href="crossref.html#citing-documents"><i class="fa fa-check"></i><b>2.3</b> Citing documents</a></li>
+<li class="chapter" data-level="2.4" data-path="crossref.html"><a href="crossref.html#citing-using-software"><i class="fa fa-check"></i><b>2.4</b> Citing using software</a></li>
+<li class="chapter" data-level="2.5" data-path="crossref.html"><a href="crossref.html#footnotes"><i class="fa fa-check"></i><b>2.5</b> Footnotes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="equations-and-direct-quotes.html"><a href="equations-and-direct-quotes.html"><i class="fa fa-check"></i><b>3</b> Equations and direct quotes</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="equations-and-direct-quotes.html"><a href="equations-and-direct-quotes.html#equations"><i class="fa fa-check"></i><b>3.1</b> Equations</a></li>
+<li class="chapter" data-level="3.2" data-path="equations-and-direct-quotes.html"><a href="equations-and-direct-quotes.html#quotes"><i class="fa fa-check"></i><b>3.2</b> Block quotes (or direct quotes)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="figures-tables-hosting-gitbook.html"><a href="figures-tables-hosting-gitbook.html"><i class="fa fa-check"></i><b>4</b> Figures, tables, hosting GitBook</a></li>
+<li class="chapter" data-level="5" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>5</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="discussion.html"><a href="discussion.html#research-significance"><i class="fa fa-check"></i><b>5.1</b> Research significance</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="discussion.html"><a href="discussion.html#global-development-goals"><i class="fa fa-check"></i><b>5.1.1</b> Global development goals</a></li>
+<li class="chapter" data-level="5.1.2" data-path="discussion.html"><a href="discussion.html#local-policy"><i class="fa fa-check"></i><b>5.1.2</b> Local policy</a></li>
+<li class="chapter" data-level="5.1.3" data-path="discussion.html"><a href="discussion.html#academic-research"><i class="fa fa-check"></i><b>5.1.3</b> Academic research</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="discussion.html"><a href="discussion.html#limitations"><i class="fa fa-check"></i><b>5.2</b> Limitations</a></li>
+<li class="chapter" data-level="5.3" data-path="discussion.html"><a href="discussion.html#transferability"><i class="fa fa-check"></i><b>5.3</b> Transferability</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="conclusion.html"><a href="conclusion.html#recommedations"><i class="fa fa-check"></i><b>6.1</b> Recommedations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="appendix-a-research-log.html"><a href="appendix-a-research-log.html"><i class="fa fa-check"></i>Appendix A Research log</a></li>
+<li class="divider"></li>
+<li><a href="" target="blank"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CASA dissertation using Bookdown</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="crossref" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Cross referencing</h1>
+<div id="chapters-or-sections" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Chapters or sections</h2>
+<p>Always give you sections an additional reference…e.g. <code># Cross referencing {#crossref}</code> This gives us two reference points. The first we can use to reference the section name…</p>
+<ol style="list-style-type: decimal">
+<li>We want to say see the Introduction (or other section label)we use …<code>[Cross referencing]</code> giving <a href="crossref.html#crossref">Cross referencing</a></li>
+</ol>
+<p>But what if we want to reference the section number (e.g. Chapter 1 or section 4.2)</p>
+<ol style="list-style-type: decimal">
+<li>Just reference the label we gave to the section….see Chapter <code>\@ref(crossref)</code> giving see Chapter <a href="crossref.html#crossref">2</a></li>
+</ol>
+</div>
+<div id="figures-tables-even-code-chunks" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Figures, tables, even code chunks</h2>
+<div id="figures" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Figures</h3>
+<p>When you create a figure, table or code chunk there is an option to name the chunk something. Do it!. Don’t be like me and not! Be warned that these chunk names can’t have any fancy or strange characters in them e.g. _. I think a - is allowed, but i’d keep it simple. Here is a figure. In the chunk options after <code>r</code> i have specified <code>nice-fig, echo=FALSE, fig.cap='Here is a nice figure!', out.width='80%'</code></p>
+<div class="figure"><span id="fig:nice-fig"></span>
+<img src="CASA-Thesis_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
+<p class="caption">
+Figure 2.1: Here is a nice figure!
+</p>
+</div>
+<p>To cross reference this just include Figure <code>\@ref(fig:nice-fig)</code> which gives…Figure <a href="crossref.html#fig:nice-fig">2.1</a>.</p>
+</div>
+<div id="tables" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Tables</h3>
+<p>For tables i’d recommend using the <code>kable</code> package. Here is an example table, same deal as the <a href="crossref.html#figures">Figures</a> section with naming the code chunk.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="crossref.html#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb3-2"><a href="crossref.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(iris, <span class="dv">20</span>), <span class="at">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
+<span id="cb3-3"><a href="crossref.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-4"><a href="crossref.html#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<table>
+<caption>
+<span id="tab:nice-tab">Table 2.1: </span>Here is a nice table!
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
+<th style="text-align:left;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+3.5
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.9
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.7
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.6
+</td>
+<td style="text-align:right;">
+3.1
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.0
+</td>
+<td style="text-align:right;">
+3.6
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.4
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+1.7
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.6
+</td>
+<td style="text-align:right;">
+3.4
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.3
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.0
+</td>
+<td style="text-align:right;">
+3.4
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.4
+</td>
+<td style="text-align:right;">
+2.9
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.9
+</td>
+<td style="text-align:right;">
+3.1
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.4
+</td>
+<td style="text-align:right;">
+3.7
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.8
+</td>
+<td style="text-align:right;">
+3.4
+</td>
+<td style="text-align:right;">
+1.6
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.8
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.3
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.1
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.8
+</td>
+<td style="text-align:right;">
+4.0
+</td>
+<td style="text-align:right;">
+1.2
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.7
+</td>
+<td style="text-align:right;">
+4.4
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.4
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+3.5
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.3
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.7
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+1.7
+</td>
+<td style="text-align:right;">
+0.3
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+1.5
+</td>
+<td style="text-align:right;">
+0.3
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+</tbody>
+</table>
+<p>Now to cite the table it’s just Table <code>\@ref(tab:nice-tab)</code>, giving Table <a href="crossref.html#tab:nice-tab">2.1</a></p>
+</div>
+</div>
+<div id="citing-documents" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Citing documents</h2>
+<p>To cite documents they need to be in a <code>.bib</code> file, that must be loaded within your <code>index.Rmd</code>. Have a look at my <code>index.Rmd</code> and you will see there are three such files, two that were provided as an example here <code>book.bib</code>, <code>packages.bib</code> and one that i added <code>test.bib</code>. I can simply cite the papers within them using the citation key e.g. <code>[@xie2015]</code> giving <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span>. Make sure you remove the ones you don’t need.</p>
+<p>If you remove the citation from the <code>[]</code> it will give <span class="citation"><a href="#ref-xie2015" role="doc-biblioref">Xie</a> (<a href="#ref-xie2015" role="doc-biblioref">2015</a>)</span>.</p>
+<p>When citing multiple authors use a ; <code>[@xie2015; @maclachlan2017urban]</code> = <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>; <a href="#ref-maclachlan2017urban" role="doc-biblioref">MacLachlan et al. 2017</a>)</span></p>
+<p>To remove the author add a minus sign <code>-@maclachlan2017urban</code> = <span class="citation">(<a href="#ref-maclachlan2017urban" role="doc-biblioref">2017</a>)</span></p>
+</div>
+<div id="citing-using-software" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Citing using software</h2>
+<p>Zotero can now continuously update your <code>.bib</code> file.</p>
+<p>To do so:</p>
+<ol style="list-style-type: decimal">
+<li><p>Download the latest release — the <code>.xpi</code> file: <a href="https://github.com/retorquere/zotero-better-bibtex/releases/tag/v5.2.108" class="uri">https://github.com/retorquere/zotero-better-bibtex/releases/tag/v5.2.108</a></p></li>
+<li><p>In Zotero &gt; Tools &gt; Add ons &gt; Extensions</p></li>
+<li><p>Select the cog &gt; Install add on from file</p></li>
+<li><p>Select the <code>.xip</code> &gt; restart Zotero.</p></li>
+</ol>
+<p>On the restart select the default naming convention.</p>
+<p>To export the library</p>
+<ol style="list-style-type: decimal">
+<li>File &gt; export</li>
+<li>Select Better BibLaTex</li>
+<li>Click keep updated</li>
+<li>Select the file to save into your Thesis project</li>
+<li>Make sure you have the file listed in your <code>bibliography</code> in the <code>index.Rmd</code> file</li>
+</ol>
+<p>You can also manage references using <code>citr</code> which makes finding them to cite much easier. In RStudio go: Addins (top tool bar) &gt; insert citations.</p>
+</div>
+<div id="footnotes" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Footnotes</h2>
+<p>To add a footnote use <code>^[This is a footnote]</code> to create.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-maclachlan2017urban" class="csl-entry">
+MacLachlan, Andrew, Eloise Biggs, Gareth Roberts, and Bryan Boruff. 2017. <span>“Urban Growth Dynamics in Perth, Western Australia: Using Applied Remote Sensing for Sustainable Future Planning.”</span> <em>Land</em> 6 (1): 9.
+</div>
+<div id="ref-xie2015" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>This is a footnote<a href="crossref.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bookdown-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="equations-and-direct-quotes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-literature.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CASA Thesis.pdf", "https://github.com/rstudio/bookdown-demo/raw/master/02-literature.Rmd"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

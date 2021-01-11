@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Bookdown basics | CASA dissertation using Bookdown</title>
+  <meta name="description" content="My thesis" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Bookdown basics | CASA dissertation using Bookdown" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="My thesis" />
+  <meta name="github-repo" content="andrewmaclachlan/CASA0005repo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Bookdown basics | CASA dissertation using Bookdown" />
+  
+  <meta name="twitter:description" content="My thesis" />
+  
+
+
+
+<meta name="date" content="2021-01-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="abbreviations.html"/>
+<link rel="next" href="crossref.html"/>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://www.ucl.ac.uk/bartlett/casa/"><img src="general_images/casa_logo.jpg"></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="declaration.html"><a href="declaration.html"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="abbreviations.html"><a href="abbreviations.html"><i class="fa fa-check"></i>Abbreviations</a></li>
+<li class="chapter" data-level="1" data-path="bookdown-basics.html"><a href="bookdown-basics.html"><i class="fa fa-check"></i><b>1</b> Bookdown basics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="bookdown-basics.html"><a href="bookdown-basics.html#structure"><i class="fa fa-check"></i><b>1.1</b> Structure</a></li>
+<li class="chapter" data-level="1.2" data-path="bookdown-basics.html"><a href="bookdown-basics.html#building-the-book"><i class="fa fa-check"></i><b>1.2</b> Building the book</a></li>
+<li class="chapter" data-level="1.3" data-path="bookdown-basics.html"><a href="bookdown-basics.html#yamls"><i class="fa fa-check"></i><b>1.3</b> YAMLs</a></li>
+<li class="chapter" data-level="1.4" data-path="bookdown-basics.html"><a href="bookdown-basics.html#formatting"><i class="fa fa-check"></i><b>1.4</b> Formatting</a></li>
+<li class="chapter" data-level="1.5" data-path="bookdown-basics.html"><a href="bookdown-basics.html#index-file"><i class="fa fa-check"></i><b>1.5</b> Index file</a></li>
+<li class="chapter" data-level="1.6" data-path="bookdown-basics.html"><a href="bookdown-basics.html#preamble"><i class="fa fa-check"></i><b>1.6</b> Preamble</a></li>
+<li class="chapter" data-level="1.7" data-path="bookdown-basics.html"><a href="bookdown-basics.html#change-this-to-a-thesis"><i class="fa fa-check"></i><b>1.7</b> Change this to a thesis</a></li>
+<li class="chapter" data-level="1.8" data-path="bookdown-basics.html"><a href="bookdown-basics.html#adding-a-pdf-to-the-end-of-your-document"><i class="fa fa-check"></i><b>1.8</b> Adding a pdf to the end of your document</a></li>
+<li class="chapter" data-level="1.9" data-path="bookdown-basics.html"><a href="bookdown-basics.html#writing-code"><i class="fa fa-check"></i><b>1.9</b> Writing code</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="crossref.html"><a href="crossref.html"><i class="fa fa-check"></i><b>2</b> Cross referencing</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="crossref.html"><a href="crossref.html#chapters-or-sections"><i class="fa fa-check"></i><b>2.1</b> Chapters or sections</a></li>
+<li class="chapter" data-level="2.2" data-path="crossref.html"><a href="crossref.html#figures-tables-even-code-chunks"><i class="fa fa-check"></i><b>2.2</b> Figures, tables, even code chunks</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="crossref.html"><a href="crossref.html#figures"><i class="fa fa-check"></i><b>2.2.1</b> Figures</a></li>
+<li class="chapter" data-level="2.2.2" data-path="crossref.html"><a href="crossref.html#tables"><i class="fa fa-check"></i><b>2.2.2</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="crossref.html"><a href="crossref.html#citing-documents"><i class="fa fa-check"></i><b>2.3</b> Citing documents</a></li>
+<li class="chapter" data-level="2.4" data-path="crossref.html"><a href="crossref.html#citing-using-software"><i class="fa fa-check"></i><b>2.4</b> Citing using software</a></li>
+<li class="chapter" data-level="2.5" data-path="crossref.html"><a href="crossref.html#footnotes"><i class="fa fa-check"></i><b>2.5</b> Footnotes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="equations-and-direct-quotes.html"><a href="equations-and-direct-quotes.html"><i class="fa fa-check"></i><b>3</b> Equations and direct quotes</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="equations-and-direct-quotes.html"><a href="equations-and-direct-quotes.html#equations"><i class="fa fa-check"></i><b>3.1</b> Equations</a></li>
+<li class="chapter" data-level="3.2" data-path="equations-and-direct-quotes.html"><a href="equations-and-direct-quotes.html#quotes"><i class="fa fa-check"></i><b>3.2</b> Block quotes (or direct quotes)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="figures-tables-hosting-gitbook.html"><a href="figures-tables-hosting-gitbook.html"><i class="fa fa-check"></i><b>4</b> Figures, tables, hosting GitBook</a></li>
+<li class="chapter" data-level="5" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>5</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="discussion.html"><a href="discussion.html#research-significance"><i class="fa fa-check"></i><b>5.1</b> Research significance</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="discussion.html"><a href="discussion.html#global-development-goals"><i class="fa fa-check"></i><b>5.1.1</b> Global development goals</a></li>
+<li class="chapter" data-level="5.1.2" data-path="discussion.html"><a href="discussion.html#local-policy"><i class="fa fa-check"></i><b>5.1.2</b> Local policy</a></li>
+<li class="chapter" data-level="5.1.3" data-path="discussion.html"><a href="discussion.html#academic-research"><i class="fa fa-check"></i><b>5.1.3</b> Academic research</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="discussion.html"><a href="discussion.html#limitations"><i class="fa fa-check"></i><b>5.2</b> Limitations</a></li>
+<li class="chapter" data-level="5.3" data-path="discussion.html"><a href="discussion.html#transferability"><i class="fa fa-check"></i><b>5.3</b> Transferability</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="conclusion.html"><a href="conclusion.html#recommedations"><i class="fa fa-check"></i><b>6.1</b> Recommedations</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="appendix-a-research-log.html"><a href="appendix-a-research-log.html"><i class="fa fa-check"></i>Appendix A Research log</a></li>
+<li class="divider"></li>
+<li><a href="" target="blank"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CASA dissertation using Bookdown</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bookdown-basics" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Bookdown basics</h1>
+<p>Bookdown enables us to take raw text files (e.g. Rmarkdown files) and output them into a number of different formats with ease. This is more useful than LaTex as you can create a word version for comments from your supervisor, a pdf for final submission and an online book for your own portfolio.</p>
+<div id="structure" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Structure</h2>
+<p>A bookdown book simply combines multiple Rmarkdown files into .pdf, html or .epub (but i’ve disabled epub here).</p>
+<p>All Rmakdown files must be located in the base (or root) of the project. For example, don’t got putting the .Rmd in a folder called chapters and then wonder why it’s not working. They all must be in the same folder as the project file. You can however put output figure images into a folder (e.g. figures) then call them in.</p>
+</div>
+<div id="building-the-book" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Building the book</h2>
+<p>You will need the packages: <code>bookdown, kabble, knitr</code></p>
+<p>You also need to install <code>tinytex::install_tinytex()</code> for generating .pdfs from your book.</p>
+<p>Once installed you can build the book by clicking the Build Book icon under the build tab in the top right quadrant.</p>
+<p>To export the book to word follow the code below from <a href="https://www.eddjberry.com/post/writing-your-thesis-with-bookdown/">Edd Berry</a>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="bookdown-basics.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;01-intro.Rmd&quot;</span>,</span>
+<span id="cb1-2"><a href="bookdown-basics.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_format =</span> <span class="st">&quot;bookdown::word_document2&quot;</span>,</span>
+<span id="cb1-3"><a href="bookdown-basics.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_file =</span> <span class="fu">paste0</span>(<span class="st">&quot;thesis-intro-&quot;</span>, <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), (<span class="st">&quot;%d-%m-%y&quot;</span>)), <span class="st">&quot;.docx&quot;</span>),</span>
+<span id="cb1-4"><a href="bookdown-basics.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_dir =</span> <span class="st">&quot;chapter-previews&quot;</span>)</span></code></pre></div>
+<p>You can also setup a reference document if you wish that word will style it on. To do so:</p>
+<ol style="list-style-type: decimal">
+<li>export to word using the code above.</li>
+<li>change the headings styles in word</li>
+<li>save the document</li>
+<li>add the <code>output_options()</code> function to the code above</li>
+</ol>
+<p>See <a href="https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html">Custom Word Templates</a> for more detailed instructions.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="bookdown-basics.html#cb2-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;01-intro.Rmd&quot;</span>,</span>
+<span id="cb2-2"><a href="bookdown-basics.html#cb2-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_format =</span> <span class="st">&quot;bookdown::word_document2&quot;</span>,</span>
+<span id="cb2-3"><a href="bookdown-basics.html#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_file =</span> <span class="fu">paste0</span>(<span class="st">&quot;thesis-intro-&quot;</span>, <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), (<span class="st">&quot;%d-%m-%y&quot;</span>)), <span class="st">&quot;.docx&quot;</span>),</span>
+<span id="cb2-4"><a href="bookdown-basics.html#cb2-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_dir =</span> <span class="st">&quot;chapter-previews&quot;</span>,</span>
+<span id="cb2-5"><a href="bookdown-basics.html#cb2-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_options =</span> <span class="fu">list</span>(<span class="at">reference_docx =</span> <span class="st">&quot;word-style-ref.docx&quot;</span>))</span></code></pre></div>
+<p>You can also export the whole document as word by clicking Build Book and selecting it. However, note that tables built with <code>Kabble</code> don’t work, so you have the following options</p>
+<ul>
+<li>create the html (gitbook) and copy the tables into word</li>
+<li>either exclude them (<code>eval=FALSE</code>) in the code chunk header</li>
+<li>use .pdf.</li>
+</ul>
+</div>
+<div id="yamls" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> YAMLs</h2>
+<p>You will see some files with a <code>.yml</code> extension. These stand for yet another markup language.</p>
+<p>Open the <code>_output.yml</code> and <code>_bookdown.yml</code>.</p>
+<p>The <code>_output.yml</code> controls the settings for each outputted format.</p>
+<p>The <code>_bookdown.yml</code> controls the order in which the files are made into chapters - you can also change the <code>Chapter</code> title if you wish here.</p>
+<p>I have set these up to create nice outputs, so there is really no need to change anything, unless you want to add a new chapter and include it in the list. To do so, simply create a new Rmarkdown document, delete all the default content, add a first level heading, and the then add it to where you want it to appear in the document in the <code>_bookdown.yml</code>.</p>
+</div>
+<div id="formatting" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Formatting</h2>
+<p>You’ll notice in the <code>_output.yml</code> that the various formats (html (or gitbook) and pdf) are calling styling codes. The gitbook calls <code>style.css</code> and the <code>pdf_book</code> calls <code>preamble.tex</code>. These files just style the various outputs.</p>
+<p>I have copied in a basic styling with a CASA logo in the table of contents, you can replace this with other variations of the file if you wish or look at the <a href="https://github.com/rstudio/bookdown-demo">minimal bookdown example</a> or my <a href="https://github.com/andrewmaclachlan/CASA0005repo/blob/master/assets/style.css">CASA0005 .css file</a>.</p>
+<p>The best place to learn more about styling is the <a href="https://rstudio4edu.github.io/rstudio4edu-book/intro-bookdown.html">RStudio for education bookdown guide</a></p>
+<p>For the .pdf version in the <code>preamble.tex</code> we have to use LaTex code. I am by no means an expert in this. If you Google each package it will tell you what it does. There isn’t much here really, but all the header stuff refers to the headings at the top of each page.</p>
+</div>
+<div id="index-file" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Index file</h2>
+<p>Open up the <code>index.Rmd</code> this <code>Rmd</code> must be called first in the <code>_bookdown.yml</code> list. There are a number of options here, but i’ve set them all up to be compliant with the CASA thesis requirements.</p>
+<p>You will need to change your title and name etc. Make sure you leave the a space here: <code>| Andrew MacLachlan</code> this won’t work <code>|Andrew MacLachlan</code></p>
+<p>If you were to be printing your work, you’d want to change the <code>classoption</code> to <code>twosides</code> and make sure the <code>geometry margins</code> were correct. <code>linestrech</code> refers to the line spacing and the bibliography stuff we come on to later.</p>
+<p>Input your GitHub repo and add a description.</p>
+<p>If you ever wanted to just create a report and not a thesis you can change the <code>documentclass</code> to other options such <code>report</code>, <code>article</code> or <code>letter</code></p>
+</div>
+<div id="preamble" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Preamble</h2>
+<p>Open the <code>preable.Rmd</code> and you will see all the sections that are required before the main text (e.g. Abstract, Declaration and so on). At the top of the page i’ve used a code chunk set to LaTex, saying to use Roman numbering as we don’t want page 1 to be the Abstract, we want it to be the first page of the Introduction. There are two conditions for each of the sections that state if output to HTML (gitbook) then do this, if output to LaTex then do this. This is the only place we have this. In our bookdown HTML we want to be able to click these sections, but in our LaTex .pdf we don’t want them to appear in the table of contents. This is what this code is doing.</p>
+<p>If you look back in the <code>_output.yml</code> you’ll also see the <code>toc</code> (table of contents) is set to false. By default this appears right after the title, but we want this to come after our <code>preable.Rmd</code>. You’ll see that i’ve called <code>\tableofcontents</code>, <code>\listoffigures</code> and <code>\listoftables</code> in the correct place again using a LaTex code chunk. These aren’t required for the bookdown output.</p>
+<p>The last section here is the abbreviations. To make this really easy, i’ve created an excel document to add them into. The code here will load that and then use the <code>kable</code> package to make a table. More on this later.I’ve also done the same for the research log in the appendix — excel sheet called <code>research_log</code>.</p>
+</div>
+<div id="change-this-to-a-thesis" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> Change this to a thesis</h2>
+<p>Easy. Just change all the titles to what you want (e.g. Introduction, Literature Review, Methodology, Discussion, Conclusion). Some of the latter <code>.Rmds</code> (Discussion etc) are ready to go!</p>
+</div>
+<div id="adding-a-pdf-to-the-end-of-your-document" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Adding a pdf to the end of your document</h2>
+<p>If you wish to add another .pdf as an Appendix (in your .pdf) then again we need a bit of LaTex code</p>
+<p><code>\includepdf[pages={-}]{mypdf.pdf}</code></p>
+<p>If you look in the <code>08-Appendix.Rmd</code> then you will see another if LaTex section, simply add in the line of code above, replacing <code>mypdf.pdf</code> with your pdf title in the main project folder. It will then be appended to the thesis. Of course, this isn’t required in the online book, but you just link to them on GitHub or embed .pdfs using:</p>
+<p>Of course you’d need a condition around this like in the <code>preamble.Rmd</code> but a link is fine. I embedded a .pdf in <a href="https://andrewmaclachlan.github.io/CASA0005repo/assignment-resources-1.html">the assignment resources of CASA0005</a></p>
+</div>
+<div id="writing-code" class="section level2" number="1.9">
+<h2><span class="header-section-number">1.9</span> Writing code</h2>
+<p>Use one project for your thesis and another for your analysis. Don’t try and do it all in a thesis project. You can set your output folder from your main analysis project to the thesis project and then easily load the figures in.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="abbreviations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="crossref.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CASA Thesis.pdf", "https://github.com/rstudio/bookdown-demo/raw/master/01-intro.Rmd"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
