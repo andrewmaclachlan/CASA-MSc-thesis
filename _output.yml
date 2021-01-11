@@ -1,0 +1,26 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: section
+      scroll_highlight: yes
+      before: |
+        <li class="toc-logo"><a href="https://www.ucl.ac.uk/bartlett/casa/"><img src="general_images/casa_logo.jpg"></a></li>
+      after: |
+        <li><a href="" target="blank"></a></li>
+    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+    download: ["pdf", "rmd"]
+    sharing:
+      github: yes
+      facebook: no
+      twitter: no
+      all: no
+bookdown::pdf_book:
+  toc: false
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: biblatex 
+  keep_tex: yes
+#bookdown::epub_book: default
+word_document: default

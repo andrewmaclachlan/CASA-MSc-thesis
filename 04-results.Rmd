@@ -1,0 +1,16 @@
+# Figures, tables, hosting GitBook
+
+This section is going to focus including figures and creating tables
+ 
+
+```{r methodsflow, echo=FALSE, out.width="250pt", fig.cap="Summary of methdological procedure for (a).... and (b)...."}
+knitr::include_graphics('general_images/example_flow.png') 
+```
+
+1. Lucidchart
+1. Draw.io
+
+
+
+
+

@@ -1,0 +1,77 @@
+# Cross referencing {#crossref}
+
+## Chapters or sections
+
+Always give you sections an additional reference...e.g. `# Cross referencing {#crossref}` This gives us two reference points. The first we can use to reference the section name...
+
+1. We want to say see the Introduction (or other section label)we use ...`[Cross referencing]` giving [Cross referencing]
+
+But what if we want to reference the section number (e.g. Chapter 1 or section 4.2)
+
+1. Just reference the label we gave to the section....see Chapter `\@ref(crossref)` giving see Chapter \@ref(crossref)
+
+## Figures, tables, even code chunks
+
+### Figures 
+
+When you create a figure, table or code chunk there is an option to name the chunk something. Do it!. Don't be like me and not! Be warned that these chunk names can't have any fancy or strange characters in them e.g. _. I think a - is allowed, but i'd keep it simple. Here is a figure. In the chunk options after `r` i have specified `nice-fig, echo=FALSE, fig.cap='Here is a nice figure!', out.width='80%'`
+
+```{r nice-fig, echo=FALSE, fig.cap='Here is a nice figure!', out.width='80%'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+To cross reference this just include Figure `\@ref(fig:nice-fig)` which gives...Figure \@ref(fig:nice-fig). 
+
+### Tables
+
+For tables i'd recommend using the `kable` package. Here is an example table, same deal as the [Figures] section with naming the code chunk.
+
+```{r nice-tab, tidy=FALSE}
+knitr::kable(
+  head(iris, 20), caption = 'Here is a nice table!',
+  booktabs = TRUE
+)
+```
+
+Now to cite the table it's just Table `\@ref(tab:nice-tab)`, giving Table \@ref(tab:nice-tab)
+
+## Citing documents 
+
+To cite documents they need to be in a `.bib` file, that must be loaded within your `index.Rmd`. Have a look at my `index.Rmd` and you will see there are three such files, two that were provided as an example here `book.bib`,  `packages.bib` and one that i added `test.bib`. I can simply cite the papers within them using the citation key e.g. `[@xie2015]` giving [@xie2015]. Make sure you remove the ones you don't need.
+
+If you remove the citation from the `[]` it will give @xie2015. 
+
+When citing multiple authors use a ; `[@xie2015; @maclachlan2017urban]` = [@xie2015; @maclachlan2017urban]
+
+To remove the author add a minus sign `-@maclachlan2017urban` = -@maclachlan2017urban
+
+## Citing using software
+
+Zotero can now continuously update your `.bib` file.
+
+To do so:
+
+1. Download the latest release --- the `.xpi` file: https://github.com/retorquere/zotero-better-bibtex/releases/tag/v5.2.108
+
+1. In Zotero > Tools > Add ons > Extensions 
+1. Select the cog > Install add on from file
+1. Select the `.xip` > restart Zotero.
+
+On the restart select the default naming convention.
+
+To export the library
+
+1. File > export 
+1. Select Better BibLaTex
+1. Click keep updated
+1. Select the file to save into your Thesis project
+1. Make sure you have the file listed in your `bibliography` in the `index.Rmd` file
+
+You can also manage references using `citr` which makes finding them to cite much easier. In RStudio go: Addins (top tool bar) > insert citations. 
+
+## Footnotes
+
+To add a footnote use `^[This is a footnote]` to create ^[This is a footnote].
+
+
+

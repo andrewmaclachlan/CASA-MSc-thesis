@@ -1,0 +1,40 @@
+# Equations and direct quotes
+
+This section will focus on equations and direct quotes
+
+## Equations {#equations}
+
+You need to include equations with some LaTeX. The easiest way to do this is to use an online tool such as: https://latex.codecogs.com/eqneditor/editor.php. It can be a real pain to get these right, but once you've worked it out it will be much easier than dealing with word equation editor. 
+
+\begin{equation} 
+  p= h\frac{c}{\varrho}
+  (\#eq:test)
+\end{equation} 
+
+To reference this in the text we use: \@ref(eq:test)
+
+You can also test your code in your RMarkdown document using `$` e.g. $$p= h\frac{c}{\varrho}$$
+
+However, this won't generate an equation number and you can't cross reference it. But we can use this logic to define the parameters within the equation e.g. where $h$ is Plank's constant, $6.626 × 10^-34 Js$
+
+`$$` puts it on a new line, single `$` keeps it on the same line (in the text)
+
+## Block quotes (or direct quotes) {#quotes}
+
+You may wish to quote a large section from a source, to do this use a block quote. 
+
+Simply input a `>` before the text. For example ` > This is a quote`. 
+
+> "This is a direct quote" 
+
+You can also provide an attribution at the footer of the quote using `tufte::quote_footer()`, either a name or a reference. You'll need to install the `tufte` package to use this. For example, `> [include only r here] tufte::quote_footer('--- Joe Martin')` or ` > [include only r here] tufte::quote_footer('--- @xie2015')` 
+
+Giving...
+
+> `r tufte::quote_footer('--- Joe Martin')`
+
+> `r tufte::quote_footer('--- @xie2015')`
+
+Instead you could just include the reference at the end of the quote, using the same method to reference as we've seen before..e.g. `> "This is a direct quote" @xie2015, Equation \@ref(eq:test)`...giving 
+
+> "This is a direct quote" @xie2015 \@ref(eq:test)

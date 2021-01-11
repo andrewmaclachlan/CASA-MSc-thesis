@@ -1,0 +1,39 @@
+
+```{=latex}
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+```
+# Appendix A  Research log {-}
+
+```{=latex}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+```
+
+## subsection {.unlisted .unnumbered}
+
+### sub sub section {.unlisted .unnumbered}
+
+```{r researchlog, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(fs)
+
+read_excel(here("tables","research_log.xlsx"))%>%
+  arrange(Date) %>% # i.e. alphabetical order by Term
+  knitr::kable(booktabs = TRUE)%>% # booktab = T gives us a pretty APA-ish table
+  kable_styling(position = "center")%>%
+  row_spec(.,
+  row=0,
+  bold = TRUE)
+```
+
+`r if (knitr:::is_latex_output()) '
+# Appendix B  Proposal {.unlisted .unnumbered}
+'`
+
+```{=latex}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+\enddocument
+```

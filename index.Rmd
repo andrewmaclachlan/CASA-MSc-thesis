@@ -1,0 +1,36 @@
+--- 
+title: CASA dissertation using Bookdown
+
+author: 
+- |
+    | Andrew MacLachlan
+    |    
+    | CASA0010, MSc Smart Cities Dissertation 
+    |  
+    | Supervisor: Dr Andrew MacLachlan
+    |
+    | Repository: https://andrewmaclachlan.github.io/CASA0005repo/
+    |  
+    | This dissertation is submitted in part requirement for the 
+    | MSc (Or MRes) in the Centre for Advanced Spatial Analysis, 
+    | Bartlett Faculty of the Built Environment, UCL
+    |
+    | Word count:  
+
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+classoption: oneside #openany or #twosides #if two then need to change headers and check margins.
+geometry: "left=4cm, right=3cm, top=2.5cm, bottom=2.5cm"
+fontsize: 12pt
+linestretch: 1.5
+bibliography: [book.bib, packages.bib, test.bib]
+biblio-style: apa
+link-citations: yes
+github-repo: andrewmaclachlan/CASA0005repo
+description: "My thesis"
+always_allow_html: yes
+---
+
+

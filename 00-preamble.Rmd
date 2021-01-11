@@ -1,0 +1,67 @@
+```{=latex}
+\pagenumbering{roman}
+```
+
+```{r include=FALSE}
+library(knitr)
+```
+
+
+`r if (knitr:::is_html_output()) '
+# Abstract {-}
+'`
+`r if (knitr:::is_latex_output()) '
+# Abstract {.unlisted .unnumbered}
+'`
+Some abstract text
+
+`r if (knitr:::is_html_output()) '
+# Declaration{-}
+'`
+`r if (knitr:::is_latex_output()) '
+# Declaration {.unlisted .unnumbered}
+'`
+
+I hereby declare that this dissertation is all my own original work and that all sources have been acknowledged. It is xxx words in length
+
+`r if (knitr:::is_html_output()) '
+# Acknowledgements{-}
+'`
+`r if (knitr:::is_latex_output()) '
+# Acknowledgements {.unlisted .unnumbered}
+'`
+I would like to thank blah blah
+
+
+```{=latex}
+% Trigger ToC creation in LaTeX
+\setcounter{tocdepth}{3}
+\tableofcontents
+\listoffigures
+\listoftables
+```
+
+`r if (knitr:::is_html_output()) '
+# Abbreviations{-}
+'`
+`r if (knitr:::is_latex_output()) '
+# Abbreviations {.unlisted .unnumbered}
+'`
+
+```{r abbreviations, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(fs)
+library(here)
+
+read_excel(here("tables", "abbreviations.xlsx"))%>%
+  arrange(Term) %>% # i.e. alphabetical order by Term
+  knitr::kable(booktabs = TRUE)%>% # booktab = T gives us a pretty APA-ish table
+  kable_styling(position = "center")%>%
+    row_spec(.,
+  row=0,
+  bold = TRUE)
+```
+
