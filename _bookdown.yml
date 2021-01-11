@@ -10,6 +10,7 @@ rmd_files:
 - 06-conclusion.Rmd
 - 07-references.Rmd
 - 08-appendix.Rmd
+output_dir: docs
 language:
   ui:
     chapter_name: "Chapter "
