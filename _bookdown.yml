@@ -1,3 +1,4 @@
+output_dir: docs
 book_filename: "CASA-Thesis"
 rmd_files:
 - index.Rmd
@@ -10,7 +11,6 @@ rmd_files:
 - 06-conclusion.Rmd
 - 07-references.Rmd
 - 08-appendix.Rmd
-output_dir: docs
 language:
   ui:
     chapter_name: "Chapter "
