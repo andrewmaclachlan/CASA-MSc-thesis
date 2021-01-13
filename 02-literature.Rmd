@@ -54,7 +54,9 @@ To do so:
 1. Download the latest release --- the `.xpi` file: https://github.com/retorquere/zotero-better-bibtex/releases/tag/v5.2.108
 
 1. In Zotero > Tools > Add ons > Extensions 
+
 1. Select the cog > Install add on from file
+
 1. Select the `.xip` > restart Zotero.
 
 On the restart select the default naming convention.
@@ -62,9 +64,13 @@ On the restart select the default naming convention.
 To export the library
 
 1. File > export 
+
 1. Select Better BibLaTex
+
 1. Click keep updated
+
 1. Select the file to save into your Thesis project
+
 1. Make sure you have the file listed in your `bibliography` in the `index.Rmd` file
 
 You can also manage references using `citr` which makes finding them to cite much easier. In RStudio go: Addins (top tool bar) > insert citations. 
