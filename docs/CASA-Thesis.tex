@@ -160,7 +160,7 @@ MSc (Or MRes) in the Centre for Advanced Spatial Analysis,\\
 Bartlett Faculty of the Built Environment, UCL\\
 ~\\
 Word count:}
-\date{2021-01-11}
+\date{2021-01-13}
 
 \begin{document}
 \maketitle
@@ -274,7 +274,7 @@ See \href{https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html}{Cust
 \end{Highlighting}
 \end{Shaded}
 
-You can also export the whole document as word by clicking Build Book and selecting it. However, note that tables built with \texttt{Kabble} don't work, so you have the following options
+You can also export the whole document as word by clicking Build Book and selecting it. However, note that tables built with \texttt{Kabble} don't work with word, so you have the following options
 
 \begin{itemize}
 \tightlist
@@ -326,7 +326,9 @@ If you ever wanted to just create a report and not a thesis you can change the \
 \hypertarget{preamble}{%
 \section{Preamble}\label{preamble}}
 
-Open the \texttt{preable.Rmd} and you will see all the sections that are required before the main text (e.g.~Abstract, Declaration and so on). At the top of the page i've used a code chunk set to LaTex, saying to use Roman numbering as we don't want page 1 to be the Abstract, we want it to be the first page of the Introduction. There are two conditions for each of the sections that state if output to HTML (gitbook) then do this, if output to LaTex then do this. This is the only place we have this. In our bookdown HTML we want to be able to click these sections, but in our LaTex .pdf we don't want them to appear in the table of contents. This is what this code is doing.
+Open the \texttt{preable.Rmd} and you will see all the sections that are required before the main text (e.g.~Declaration and so on). At the top of the page i've used a code chunk set to LaTex, saying to use Roman numbering as we don't want page 1 to be the Declaration, we want it to be the first page of the Introduction. There are two conditions for each of the sections that state if output to HTML (gitbook) then do this, if output to LaTex then do this. This is the only place we have this. In our bookdown HTML we want to be able to click these sections, but in our LaTex .pdf we don't want them to appear in the table of contents. This is what this code is doing.
+
+The Abstract is on the \texttt{index.Rmd} the same code condition applies to it, with Roman numbering also specified.
 
 If you look back in the \texttt{\_output.yml} you'll also see the \texttt{toc} (table of contents) is set to false. By default this appears right after the title, but we want this to come after our \texttt{preable.Rmd}. You'll see that i've called \texttt{\textbackslash{}tableofcontents}, \texttt{\textbackslash{}listoffigures} and \texttt{\textbackslash{}listoftables} in the correct place again using a LaTex code chunk. These aren't required for the bookdown output.
 
@@ -337,8 +339,8 @@ The last section here is the abbreviations. To make this really easy, i've creat
 
 Easy. Just change all the titles to what you want (e.g.~Introduction, Literature Review, Methodology, Discussion, Conclusion). Some of the latter \texttt{.Rmds} (Discussion etc) are ready to go!
 
-\hypertarget{adding-a-pdf-to-the-end-of-your-document}{%
-\section{Adding a pdf to the end of your document}\label{adding-a-pdf-to-the-end-of-your-document}}
+\hypertarget{adding-a-pdf}{%
+\section{Adding a pdf}\label{adding-a-pdf}}
 
 If you wish to add another .pdf as an Appendix (in your .pdf) then again we need a bit of LaTex code
 

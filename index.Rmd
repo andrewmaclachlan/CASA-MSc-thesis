@@ -28,8 +28,8 @@ linestretch: 1.5
 bibliography: [book.bib, packages.bib, test.bib]
 biblio-style: apa
 link-citations: yes
-github-repo: andrewmaclachlan/CASA0005repo
-description: "My thesis"
+github-repo: andrewmaclachlan/CASA-MSc-thesis
+description: "This dissertation is submitted in part requirement for the MSc (Or MRes) in the Centre for Advanced Spatial Analysis, Bartlett Faculty of the Built Environment, UCL "
 always_allow_html: yes
 ---
 

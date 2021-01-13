@@ -5,25 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Bookdown basics | CASA dissertation using Bookdown</title>
-  <meta name="description" content="My thesis" />
+  <meta name="description" content="This dissertation is submitted in part requirement for the MSc (Or MRes) in the Centre for Advanced Spatial Analysis, Bartlett Faculty of the Built Environment, UCL" />
   <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Bookdown basics | CASA dissertation using Bookdown" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="My thesis" />
-  <meta name="github-repo" content="andrewmaclachlan/CASA0005repo" />
+  <meta property="og:description" content="This dissertation is submitted in part requirement for the MSc (Or MRes) in the Centre for Advanced Spatial Analysis, Bartlett Faculty of the Built Environment, UCL" />
+  <meta name="github-repo" content="andrewmaclachlan/CASA-MSc-thesis" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 1 Bookdown basics | CASA dissertation using Bookdown" />
   
-  <meta name="twitter:description" content="My thesis" />
+  <meta name="twitter:description" content="This dissertation is submitted in part requirement for the MSc (Or MRes) in the Centre for Advanced Spatial Analysis, Bartlett Faculty of the Built Environment, UCL" />
   
 
 
 
-<meta name="date" content="2021-01-11" />
+<meta name="date" content="2021-01-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -172,7 +172,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.5" data-path="bookdown-basics.html"><a href="bookdown-basics.html#index-file"><i class="fa fa-check"></i><b>1.5</b> Index file</a></li>
 <li class="chapter" data-level="1.6" data-path="bookdown-basics.html"><a href="bookdown-basics.html#preamble"><i class="fa fa-check"></i><b>1.6</b> Preamble</a></li>
 <li class="chapter" data-level="1.7" data-path="bookdown-basics.html"><a href="bookdown-basics.html#change-this-to-a-thesis"><i class="fa fa-check"></i><b>1.7</b> Change this to a thesis</a></li>
-<li class="chapter" data-level="1.8" data-path="bookdown-basics.html"><a href="bookdown-basics.html#adding-a-pdf-to-the-end-of-your-document"><i class="fa fa-check"></i><b>1.8</b> Adding a pdf to the end of your document</a></li>
+<li class="chapter" data-level="1.8" data-path="bookdown-basics.html"><a href="bookdown-basics.html#adding-a-pdf"><i class="fa fa-check"></i><b>1.8</b> Adding a pdf</a></li>
 <li class="chapter" data-level="1.9" data-path="bookdown-basics.html"><a href="bookdown-basics.html#writing-code"><i class="fa fa-check"></i><b>1.9</b> Writing code</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="crossref.html"><a href="crossref.html"><i class="fa fa-check"></i><b>2</b> Cross referencing</a>
@@ -267,7 +267,7 @@ div.csl-indent {
 <span id="cb2-6"><a href="bookdown-basics.html#cb2-6" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">&quot;.docx&quot;</span>),</span>
 <span id="cb2-7"><a href="bookdown-basics.html#cb2-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_dir =</span> <span class="st">&quot;chapter-previews&quot;</span>,</span>
 <span id="cb2-8"><a href="bookdown-basics.html#cb2-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_options =</span> <span class="fu">list</span>(<span class="at">reference_docx =</span> <span class="st">&quot;word-style-ref.docx&quot;</span>))</span></code></pre></div>
-<p>You can also export the whole document as word by clicking Build Book and selecting it. However, note that tables built with <code>Kabble</code> don’t work, so you have the following options</p>
+<p>You can also export the whole document as word by clicking Build Book and selecting it. However, note that tables built with <code>Kabble</code> don’t work with word, so you have the following options</p>
 <ul>
 <li>create the html (gitbook) and copy the tables into word</li>
 <li>either exclude them (<code>eval=FALSE</code>) in the code chunk header</li>
@@ -299,7 +299,8 @@ div.csl-indent {
 </div>
 <div id="preamble" class="section level2" number="1.6">
 <h2><span class="header-section-number">1.6</span> Preamble</h2>
-<p>Open the <code>preable.Rmd</code> and you will see all the sections that are required before the main text (e.g. Abstract, Declaration and so on). At the top of the page i’ve used a code chunk set to LaTex, saying to use Roman numbering as we don’t want page 1 to be the Abstract, we want it to be the first page of the Introduction. There are two conditions for each of the sections that state if output to HTML (gitbook) then do this, if output to LaTex then do this. This is the only place we have this. In our bookdown HTML we want to be able to click these sections, but in our LaTex .pdf we don’t want them to appear in the table of contents. This is what this code is doing.</p>
+<p>Open the <code>preable.Rmd</code> and you will see all the sections that are required before the main text (e.g. Declaration and so on). At the top of the page i’ve used a code chunk set to LaTex, saying to use Roman numbering as we don’t want page 1 to be the Declaration, we want it to be the first page of the Introduction. There are two conditions for each of the sections that state if output to HTML (gitbook) then do this, if output to LaTex then do this. This is the only place we have this. In our bookdown HTML we want to be able to click these sections, but in our LaTex .pdf we don’t want them to appear in the table of contents. This is what this code is doing.</p>
+<p>The Abstract is on the <code>index.Rmd</code> the same code condition applies to it, with Roman numbering also specified.</p>
 <p>If you look back in the <code>_output.yml</code> you’ll also see the <code>toc</code> (table of contents) is set to false. By default this appears right after the title, but we want this to come after our <code>preable.Rmd</code>. You’ll see that i’ve called <code>\tableofcontents</code>, <code>\listoffigures</code> and <code>\listoftables</code> in the correct place again using a LaTex code chunk. These aren’t required for the bookdown output.</p>
 <p>The last section here is the abbreviations. To make this really easy, i’ve created an excel document to add them into. The code here will load that and then use the <code>kable</code> package to make a table. More on this later.I’ve also done the same for the research log in the appendix — excel sheet called <code>research_log</code>.</p>
 </div>
@@ -307,8 +308,8 @@ div.csl-indent {
 <h2><span class="header-section-number">1.7</span> Change this to a thesis</h2>
 <p>Easy. Just change all the titles to what you want (e.g. Introduction, Literature Review, Methodology, Discussion, Conclusion). Some of the latter <code>.Rmds</code> (Discussion etc) are ready to go!</p>
 </div>
-<div id="adding-a-pdf-to-the-end-of-your-document" class="section level2" number="1.8">
-<h2><span class="header-section-number">1.8</span> Adding a pdf to the end of your document</h2>
+<div id="adding-a-pdf" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Adding a pdf</h2>
 <p>If you wish to add another .pdf as an Appendix (in your .pdf) then again we need a bit of LaTex code</p>
 <p><code>\includepdf[pages={-}]{mypdf.pdf}</code></p>
 <p>If you look in the <code>08-Appendix.Rmd</code> then you will see another if LaTex section, simply add in the line of code above, replacing <code>mypdf.pdf</code> with your pdf title in the main project folder. It will then be appended to the thesis. Of course, this isn’t required in the online book, but you just link to them on GitHub or embed .pdfs using:</p>
