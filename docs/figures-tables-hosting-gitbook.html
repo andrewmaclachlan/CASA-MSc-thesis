@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2021-01-13" />
+<meta name="date" content="2021-01-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -192,7 +192,15 @@ div.csl-indent {
 <li class="chapter" data-level="3.1" data-path="equations-and-direct-quotes.html"><a href="equations-and-direct-quotes.html#equations"><i class="fa fa-check"></i><b>3.1</b> Equations</a></li>
 <li class="chapter" data-level="3.2" data-path="equations-and-direct-quotes.html"><a href="equations-and-direct-quotes.html#quotes"><i class="fa fa-check"></i><b>3.2</b> Block quotes (or direct quotes)</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="figures-tables-hosting-gitbook.html"><a href="figures-tables-hosting-gitbook.html"><i class="fa fa-check"></i><b>4</b> Figures, tables, hosting GitBook</a></li>
+<li class="chapter" data-level="4" data-path="figures-tables-hosting-gitbook.html"><a href="figures-tables-hosting-gitbook.html"><i class="fa fa-check"></i><b>4</b> Figures, tables, hosting GitBook</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="figures-tables-hosting-gitbook.html"><a href="figures-tables-hosting-gitbook.html#including-figures-and-tables"><i class="fa fa-check"></i><b>4.1</b> Including figures and tables</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="figures-tables-hosting-gitbook.html"><a href="figures-tables-hosting-gitbook.html#figures-1"><i class="fa fa-check"></i><b>4.1.1</b> Figures</a></li>
+<li class="chapter" data-level="4.1.2" data-path="figures-tables-hosting-gitbook.html"><a href="figures-tables-hosting-gitbook.html#tables-1"><i class="fa fa-check"></i><b>4.1.2</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="figures-tables-hosting-gitbook.html"><a href="figures-tables-hosting-gitbook.html#hosting-the-book"><i class="fa fa-check"></i><b>4.2</b> Hosting the book</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>5</b> Discussion</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="discussion.html"><a href="discussion.html#research-significance"><i class="fa fa-check"></i><b>5.1</b> Research significance</a>
@@ -234,16 +242,204 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 4</span> Figures, tables, hosting GitBook</h1>
 <p>This section is going to focus including figures and creating tables</p>
 <div class="figure"><span id="fig:methodsflow"></span>
-<img src="general_images/example_flow.png" alt="Summary of methdological procedure for (a).... and (b)...." width="250pt" />
+<img src="general_images/example_flow.png" alt="Summary of methdological procedure for (a).... and (b)...." width="100pt" />
 <p class="caption">
 Figure 4.1: Summary of methdological procedure for (a)…. and (b)….
 </p>
 </div>
+<div id="including-figures-and-tables" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Including figures and tables</h2>
+<div id="figures-1" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Figures</h3>
+<p>To include the figure above use the code <code>knitr::include_graphics(here::here('general_images','example_flow.png'))</code> within a code chunk. In the chunk options you can specify the width and figure captions e.g. <code>out.width="100pt", fig.cap="Summary of methdological procedure for (a).... and (b)...."</code>. However, if you do show the code with <code>echo=TRUE</code> then you can’t specify the <code>out.width</code>.</p>
+<p>For making flow diagrams have a look at</p>
 <ol style="list-style-type: decimal">
 <li>Lucidchart</li>
 <li>Draw.io</li>
 </ol>
+</div>
+<div id="tables-1" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Tables</h3>
+<p>For creating tables i’d suggest creating either an excel file or <code>.csv</code> and then reading the data into R and using the <code>kabble</code> package to format it how you wish. The example below is from the abbreviations section</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="figures-tables-hosting-gitbook.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a href="figures-tables-hosting-gitbook.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb4-3"><a href="figures-tables-hosting-gitbook.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb4-4"><a href="figures-tables-hosting-gitbook.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb4-5"><a href="figures-tables-hosting-gitbook.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
+<span id="cb4-6"><a href="figures-tables-hosting-gitbook.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb4-7"><a href="figures-tables-hosting-gitbook.html#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="figures-tables-hosting-gitbook.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#read in data</span></span>
+<span id="cb4-9"><a href="figures-tables-hosting-gitbook.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;tables&quot;</span>, <span class="st">&quot;abbreviations.xlsx&quot;</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="figures-tables-hosting-gitbook.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Term) <span class="sc">%&gt;%</span> <span class="co"># i.e. alphabetical order by Term</span></span>
+<span id="cb4-11"><a href="figures-tables-hosting-gitbook.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># booktab = T gives us a pretty APA-ish table</span></span>
+<span id="cb4-12"><a href="figures-tables-hosting-gitbook.html#cb4-12" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">booktabs =</span> <span class="cn">TRUE</span>)<span class="sc">%&gt;%</span> </span>
+<span id="cb4-13"><a href="figures-tables-hosting-gitbook.html#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">position =</span> <span class="st">&quot;center&quot;</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb4-14"><a href="figures-tables-hosting-gitbook.html#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># any specifc row changes you want</span></span>
+<span id="cb4-15"><a href="figures-tables-hosting-gitbook.html#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row_spec</span>(.,</span>
+<span id="cb4-16"><a href="figures-tables-hosting-gitbook.html#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">row=</span><span class="dv">0</span>,</span>
+<span id="cb4-17"><a href="figures-tables-hosting-gitbook.html#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;">
+Term
+</th>
+<th style="text-align:left;font-weight: bold;">
+Abbreviation
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Digital Elevation Model
+</td>
+<td style="text-align:left;">
+DEM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Digital Surface Model
+</td>
+<td style="text-align:left;">
+DSM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Digital Terrain Model
+</td>
+<td style="text-align:left;">
+DTM
+</td>
+</tr>
+</tbody>
+</table>
+<p>Here is a more advanced table from GIS assignment outline. Notice that in the excel file where i wanted the same data replicated in the table here (e.g. weeks 2 and 3) i simply copied it in a new cell - in other words each tow has all the information and then it’s styled in R.</p>
+<p>You do loads of things with kabble including adding small visulisations within the table - <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html#Overview">consult the documentation for more info</a>.</p>
+<p>If in doubt, keep it simple.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="figures-tables-hosting-gitbook.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb5-2"><a href="figures-tables-hosting-gitbook.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb5-3"><a href="figures-tables-hosting-gitbook.html#cb5-3" aria-hidden="true" tabindex="-1"></a>timeline <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&#39;tables&#39;</span>, </span>
+<span id="cb5-4"><a href="figures-tables-hosting-gitbook.html#cb5-4" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;timeline.xlsx&#39;</span>))</span>
+<span id="cb5-5"><a href="figures-tables-hosting-gitbook.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(timeline, </span>
+<span id="cb5-6"><a href="figures-tables-hosting-gitbook.html#cb5-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">align=</span>(<span class="fu">c</span>(<span class="st">&#39;c&#39;</span>, <span class="st">&#39;l&#39;</span>)), </span>
+<span id="cb5-7"><a href="figures-tables-hosting-gitbook.html#cb5-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">valign=</span><span class="st">&quot;middle&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="figures-tables-hosting-gitbook.html#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, </span>
+<span id="cb5-9"><a href="figures-tables-hosting-gitbook.html#cb5-9" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;hover&quot;</span>, </span>
+<span id="cb5-10"><a href="figures-tables-hosting-gitbook.html#cb5-10" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;condensed&quot;</span>, </span>
+<span id="cb5-11"><a href="figures-tables-hosting-gitbook.html#cb5-11" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;responsive&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-12"><a href="figures-tables-hosting-gitbook.html#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row_spec</span>(<span class="dv">0</span>, </span>
+<span id="cb5-13"><a href="figures-tables-hosting-gitbook.html#cb5-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">&quot;c&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-14"><a href="figures-tables-hosting-gitbook.html#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> T, </span>
+<span id="cb5-15"><a href="figures-tables-hosting-gitbook.html#cb5-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">border_right =</span> T) <span class="sc">%&gt;%</span></span>
+<span id="cb5-16"><a href="figures-tables-hosting-gitbook.html#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">collapse_rows</span>(<span class="at">columns =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;text-align: center;">
+Week
+</th>
+<th style="text-align:left;text-align: center;">
+Activity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+1
+</td>
+<td style="text-align:left;">
+Undertake wider data exploration and reading to find a topic you might be interested in progressing with. Start with a data search first to avoid proposing a research area then forcing potentially unsuitable data to fit it.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+2
+</td>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="2">
+Assess the validity of your topic in terms of data suitability, then sketch out an introduction and literature review including academic and policy documents (or any reputable source).
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+4
+</td>
+<td style="text-align:left;">
+Based on your knowledge of available data and literature compose a research question or hypothesis. Review your introduction and literature review to ensure you are guiding the reader to understanding the importance of the project.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+5
+</td>
+<td style="text-align:left;">
+Create a draft of the methodology / initial ideas that can be expanded on as we move to more advanced analysis in the second part of the course.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+6
+</td>
+<td style="text-align:left;vertical-align: middle !important;" rowspan="4">
+Learn and practice analysis from the course and identify appropriate techniques (from wider research) that might be applicable/relevant to your data. Conduct an extensive methodological review – this could include analysis from within academic literature and/or government departments (or any reputable source).
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+10 to deadline
+</td>
+<td style="text-align:left;">
+Undertake your analysis, then write up your discussion and conclusion (that includes recommendations)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;border-right:1px solid;">
+Before submission
+</td>
+<td style="text-align:left;">
+Check that your assignment follows the standard model of scientific investigation. You may need to update your introduction and literature review based on the analysis you undertook to ensure a seamless narrative throughout.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="hosting-the-book" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Hosting the book</h2>
+<p>You will need to create a new GitHub repository to host your book online using GitHub pages — like the example is. GitHub pages takes a load of <code>.html</code> files and makes a website.</p>
+<p>To do so you need to set up a few things</p>
+<ol style="list-style-type: decimal">
+<li>Go to the <code>_bookdown.yml</code> file and make sue that that you have this line of code: <code>output_dir: docs</code> (it should be there)</li>
+<li>In the same file make sure your <code>book_filename</code> doesn’t have any spaces use <code>-</code> or <code>_</code> e.g. <code>CASA-Thesis</code></li>
+<li>Build your book locally</li>
+<li>Save, stage changes, commit and then push to GitHub</li>
+<li>On your GitHub repository &gt; settings &gt; GitHub pages &gt; select the source as main and the folder as docs</li>
+</ol>
 
+</div>
 </div>
             </section>
 

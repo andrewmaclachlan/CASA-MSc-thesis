@@ -120,8 +120,7 @@ include_graphics('yourPDF.pdf',
                                       FALSE)
 )
 ```
-Of course you'd need a condition around this like in the `preamble.Rmd` but a link is fine. I embedded a .pdf in [the assignment resources of CASA0005](https://andrewmaclachlan.github.io/CASA0005repo/assignment-resources-1.html)
-
+You'd need a condition around this like in the `preamble.Rmd` but a link is fine. I embedded a .pdf in [the assignment resources of CASA0005](https://andrewmaclachlan.github.io/CASA0005repo/assignment-resources-1.html)
 
 ## Writing code
 

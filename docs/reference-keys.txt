@@ -24,6 +24,10 @@ equations-and-direct-quotes
 equations
 quotes
 figures-tables-hosting-gitbook
+including-figures-and-tables
+figures-1
+tables-1
+hosting-the-book
 discussion
 research-significance
 global-development-goals
