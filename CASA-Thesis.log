@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.11)  22 JAN 2021 17:26
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.11)  22 JAN 2021 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1590,6 +1590,18 @@ e for
 Overfull \hbox (0.35112pt too wide) in paragraph at lines 719--720
 []\TU/lmr/m/n/12 Now remember to cross reference this table, it would be…Table 
 \TU/lmtt/m/n/12 \@ref(tab:kable)\TU/lmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 4036) in paragraph at lines 736--738
+[]\TU/lmr/m/n/12 Go to the \TU/lmtt/m/n/12 _-output.yml \TU/lmr/m/n/12 file and
+ change the \TU/lmtt/m/n/12 edit \TU/lmr/m/n/12 argument to
+ []
+
+
+Overfull \hbox (188.79509pt too wide) in paragraph at lines 736--738
+\TU/lmtt/m/n/12 YOURREPO/edit/main/%s\TU/lmr/m/n/12 , here it’s \TU/lmtt/m/n/12
+ https://github.com/andrewmaclachlan/CASA-MSc-thesis/edit/main/%s 
  []
 
 [19]
