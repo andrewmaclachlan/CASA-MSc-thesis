@@ -8,7 +8,7 @@ bookdown::gitbook:
         <li class="toc-logo"><a href="https://www.ucl.ac.uk/bartlett/casa/"><img src="general_images/casa_logo.jpg"></a></li>
       after: |
         <li><a href="" target="blank"></a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+    edit: https://github.com/andrewmaclachlan/CASA-MSc-thesis/edit/master/%s
     download: ["pdf", "rmd"]
     sharing:
       github: yes

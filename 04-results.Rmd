@@ -89,6 +89,7 @@ To do so you need to set up a few things
 
 1. Go to the `_bookdown.yml` file and make sue that that you have this line of code: `output_dir: docs` (it should be there)
 1. In the same file make sure your `book_filename` doesn't have any spaces use `-` or `_` e.g. `CASA-Thesis`
+1. Go to the `_output.yml` file and change the `edit` argument to `YOURREPO/edit/master/%s`, here it's `https://github.com/andrewmaclachlan/CASA-MSc-thesis/edit/master/%s`
 1. Build your book locally, close the preview window
 1. Save, stage changes, commit and then push to GitHub
 1. On your GitHub repository > settings > GitHub pages > select the source as main and the folder as docs

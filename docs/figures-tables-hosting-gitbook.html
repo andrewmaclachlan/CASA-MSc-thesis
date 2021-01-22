@@ -356,6 +356,7 @@ DTM
 <ol style="list-style-type: decimal">
 <li>Go to the <code>_bookdown.yml</code> file and make sue that that you have this line of code: <code>output_dir: docs</code> (it should be there)</li>
 <li>In the same file make sure your <code>book_filename</code> doesn’t have any spaces use <code>-</code> or <code>_</code> e.g. <code>CASA-Thesis</code></li>
+<li>Go to the <code>_output.yml</code> file and change the <code>edit</code> argument to <code>YOURREPO/edit/master/%s</code>, here it’s <code>https://github.com/andrewmaclachlan/CASA-MSc-thesis/edit/master/%s</code></li>
 <li>Build your book locally, close the preview window</li>
 <li>Save, stage changes, commit and then push to GitHub</li>
 <li>On your GitHub repository &gt; settings &gt; GitHub pages &gt; select the source as main and the folder as docs</li>
@@ -401,7 +402,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-results.Rmd",
+"link": "https://github.com/andrewmaclachlan/CASA-MSc-thesis/edit/master/04-results.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -412,7 +413,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["CASA-Thesis.pdf", "https://github.com/rstudio/bookdown-demo/raw/master/04-results.Rmd"],
+"download": ["CASA-Thesis.pdf", "https://github.com/andrewmaclachlan/CASA-MSc-thesis/raw/master/04-results.Rmd"],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
