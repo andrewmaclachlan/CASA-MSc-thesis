@@ -175,8 +175,9 @@ div.csl-indent {
 <li class="chapter" data-level="1.5" data-path="bookdown-basics.html"><a href="bookdown-basics.html#index-file"><i class="fa fa-check"></i><b>1.5</b> Index file</a></li>
 <li class="chapter" data-level="1.6" data-path="bookdown-basics.html"><a href="bookdown-basics.html#preamble"><i class="fa fa-check"></i><b>1.6</b> Preamble</a></li>
 <li class="chapter" data-level="1.7" data-path="bookdown-basics.html"><a href="bookdown-basics.html#change-this-to-a-thesis"><i class="fa fa-check"></i><b>1.7</b> Change this to a thesis</a></li>
-<li class="chapter" data-level="1.8" data-path="bookdown-basics.html"><a href="bookdown-basics.html#adding-a-pdf"><i class="fa fa-check"></i><b>1.8</b> Adding a pdf</a></li>
-<li class="chapter" data-level="1.9" data-path="bookdown-basics.html"><a href="bookdown-basics.html#writing-code"><i class="fa fa-check"></i><b>1.9</b> Writing code</a></li>
+<li class="chapter" data-level="1.8" data-path="bookdown-basics.html"><a href="bookdown-basics.html#word-count"><i class="fa fa-check"></i><b>1.8</b> Word count</a></li>
+<li class="chapter" data-level="1.9" data-path="bookdown-basics.html"><a href="bookdown-basics.html#adding-a-pdf"><i class="fa fa-check"></i><b>1.9</b> Adding a pdf</a></li>
+<li class="chapter" data-level="1.10" data-path="bookdown-basics.html"><a href="bookdown-basics.html#writing-code"><i class="fa fa-check"></i><b>1.10</b> Writing code</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="crossref.html"><a href="crossref.html"><i class="fa fa-check"></i><b>2</b> Cross referencing</a>
 <ul>
@@ -319,15 +320,19 @@ div.csl-indent {
 <h2><span class="header-section-number">1.7</span> Change this to a thesis</h2>
 <p>Easy. Just change all the titles to what you want (e.g. Introduction, Literature Review, Methodology, Discussion, Conclusion). Some of the latter <code>.Rmds</code> (Discussion etc) are ready to go!</p>
 </div>
-<div id="adding-a-pdf" class="section level2" number="1.8">
-<h2><span class="header-section-number">1.8</span> Adding a pdf</h2>
+<div id="word-count" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Word count</h2>
+<p>To get a word count install and then use the <a href="https://github.com/benmarwick/wordcountaddin">word count addin package</a> through Tools&gt;Addins&gt;Wordcount</p>
+</div>
+<div id="adding-a-pdf" class="section level2" number="1.9">
+<h2><span class="header-section-number">1.9</span> Adding a pdf</h2>
 <p>If you wish to add another .pdf as an Appendix (in your .pdf) then again we need a bit of LaTex code</p>
 <p><code>\includepdf[pages={-}]{mypdf.pdf}</code></p>
 <p>If you look in the <code>08-Appendix.Rmd</code> then you will see another if LaTex section, simply add in the line of code above, replacing <code>mypdf.pdf</code> with your pdf title in the main project folder. It will then be appended to the thesis. Of course, this isn’t required in the online book, but you just link to them on GitHub or embed .pdfs using:</p>
 <p>You’d need a condition around this like in the <code>preamble.Rmd</code> but a link is fine. I embedded a .pdf in <a href="https://andrewmaclachlan.github.io/CASA0005repo/assignment-resources-1.html">the assignment resources of CASA0005</a></p>
 </div>
-<div id="writing-code" class="section level2" number="1.9">
-<h2><span class="header-section-number">1.9</span> Writing code</h2>
+<div id="writing-code" class="section level2" number="1.10">
+<h2><span class="header-section-number">1.10</span> Writing code</h2>
 <p>Use one project for your thesis and another for your analysis. Don’t try and do it all in a thesis project. You can set your output folder from your main analysis project to the thesis project and then easily load the figures in.</p>
 
 </div>

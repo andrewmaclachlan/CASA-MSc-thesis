@@ -106,6 +106,10 @@ The last section here is the abbreviations. To make this really easy, i've creat
 
 Easy. Just change all the titles to what you want (e.g. Introduction, Literature Review, Methodology, Discussion, Conclusion). Some of the latter `.Rmds` (Discussion etc) are ready to go! 
 
+## Word count
+
+To get a word count install and then use the [word count addin package](https://github.com/benmarwick/wordcountaddin) through Tools>Addins>Wordcount 
+
 ## Adding a pdf
 
 If you wish to add another .pdf as an Appendix (in your .pdf) then again we need a bit of LaTex code

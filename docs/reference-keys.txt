@@ -10,6 +10,7 @@ formatting
 index-file
 preamble
 change-this-to-a-thesis
+word-count
 adding-a-pdf
 writing-code
 crossref

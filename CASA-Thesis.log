@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.11)  22 JAN 2021 17:21
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.11)  22 JAN 2021 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1516,7 +1516,7 @@ Chapter 1.
 ] [2] [3] [4] [5] [6]
 Chapter 2.
 
-Overfull \hbox (7.43431pt too wide) in paragraph at lines 380--381
+Overfull \hbox (7.43431pt too wide) in paragraph at lines 385--386
 []\TU/lmr/m/n/12 Just reference the label we gave to the section….see Chapter \
 TU/lmtt/m/n/12 \@ref(crossref)
  []
@@ -1527,42 +1527,42 @@ TU/lmtt/m/n/12 \@ref(crossref)
 File: CASA-Thesis_files/figure-latex/nice-fig-1.pdf Graphic file (type pdf)
 <use CASA-Thesis_files/figure-latex/nice-fig-1.pdf>
 
-Underfull \hbox (badness 2443) in paragraph at lines 395--396
+Underfull \hbox (badness 2443) in paragraph at lines 400--401
 []\TU/lmr/m/n/12 To cross reference this just include Figure \TU/lmtt/m/n/12 \@
 ref(fig:nice-fig) \TU/lmr/m/n/12 which
  []
 
 [8] [9]
-Underfull \hbox (badness 2080) in paragraph at lines 469--471
+Underfull \hbox (badness 2080) in paragraph at lines 474--476
 []\TU/lmr/m/n/12 Download the latest release — the \TU/lmtt/m/n/12 .xpi \TU/lmr
 /m/n/12 file: []$[][][][][] [] [] [] [][][][][][] [] [][][] []
  []
 
 [10]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 501.
+(Font)              scaled to size 5.0pt on input line 506.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 501.
+(Font)              scaled to size 5.00046pt on input line 506.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 501.
+(Font)              scaled to size 4.99947pt on input line 506.
 [11]
 Chapter 3.
 [12
 
 ]
-Underfull \hbox (badness 2302) in paragraph at lines 537--538
+Underfull \hbox (badness 2302) in paragraph at lines 542--543
 []\TU/lmr/m/n/12 You can also provide an attribution at the footer of the quote
  using
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 537--538
+Underfull \hbox (badness 1472) in paragraph at lines 542--543
 \TU/lmtt/m/n/12 tufte::quote_-footer()\TU/lmr/m/n/12 , either a name or a refer
 ence. You’ll need to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--538
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
 \TU/lmtt/m/n/12 tufte::quote_-footer([]--- Joe Martin[]) \TU/lmr/m/n/12 or \TU/
 lmtt/m/n/12 > [include only r here]
  []
@@ -1575,19 +1575,19 @@ g Graphic file (type bmp)
 [14
 
 ]
-Overfull \hbox (29.83423pt too wide) in paragraph at lines 572--573
+Overfull \hbox (29.83423pt too wide) in paragraph at lines 577--578
 []\TU/lmtt/m/n/12 knitr::include_-graphics(here::here([]general_-images[],[]exa
 mple_-flow.png[])) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 576--577
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
 []\TU/lmtt/m/n/12 out.width="100pt", fig.cap="Summary of methdological procedur
 e for
  []
 
 [15] [16] [17] [18]
-Overfull \hbox (0.35112pt too wide) in paragraph at lines 714--715
+Overfull \hbox (0.35112pt too wide) in paragraph at lines 719--720
 []\TU/lmr/m/n/12 Now remember to cross reference this table, it would be…Table 
 \TU/lmtt/m/n/12 \@ref(tab:kable)\TU/lmr/m/n/12 ,
  []
@@ -1612,10 +1612,10 @@ Package logreq Info: Writing requests to 'CASA-Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30194 strings out of 479212
- 549973 string characters out of 5873361
- 1549923 words of memory out of 5000000
- 49315 multiletter control sequences out of 15000+600000
+ 30196 strings out of 479212
+ 549991 string characters out of 5873361
+ 1549962 words of memory out of 5000000
+ 49317 multiletter control sequences out of 15000+600000
  410964 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,12n,122p,744b,5309s stack positions out of 5000i,500n,10000p,200000b,80000s
