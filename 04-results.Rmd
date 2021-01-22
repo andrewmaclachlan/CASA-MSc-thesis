@@ -2,7 +2,7 @@
 
 This section is going to focus including figures and creating tables
 
-```{r methodsflow, echo=FALSE, out.width="100pt", fig.cap="Summary of methdological procedure for (a).... and (b)...."}
+```{r methodsflow, echo=FALSE, out.width="300pt", fig.cap="Summary of methdological procedure for (a).... and (b)...."}
 library(here)
 knitr::include_graphics(here::here('general_images','example_flow.png'))
 ```
@@ -10,9 +10,17 @@ knitr::include_graphics(here::here('general_images','example_flow.png'))
 
 ### Figures
 
-To include the figure above use the code `knitr::include_graphics(here::here('general_images','example_flow.png'))` within a code chunk. In the chunk options you can specify the width and figure captions e.g. `out.width="100pt", fig.cap="Summary of methdological procedure for (a).... and (b)...."`. However, if you do show the code with `echo=TRUE` then you can't specify the `out.width`. 
+To include the figure above use the code:
 
-For making flow diagrams have a look at
+`knitr::include_graphics(here::here('general_images','example_flow.png'))` 
+
+within a code chunk. In the chunk options you can specify the width and figure captions e.g. 
+
+`out.width="100pt", fig.cap="Summary of methdological procedure for (a).... and (b)...."`. 
+
+However, if you do show the code with `echo=TRUE` then you can't specify the `out.width`. 
+
+For making flow diagrams have a look at:
 
 1. Lucidchart
 1. Draw.io
@@ -42,31 +50,36 @@ read_excel(here("tables", "abbreviations.xlsx"))%>%
   bold = TRUE)
 ```
 
-Here is a more advanced table from GIS assignment outline. Notice that in the excel file where i wanted the same data replicated in the table here (e.g. weeks 2 and 3) i simply copied it in a new cell - in other words each tow has all the information and then it's styled in R.
-
 You do loads of things with kabble including adding small visulisations within the table - [consult the documentation for more info](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html#Overview).
 
-If in doubt, keep it simple.
+**If in doubt, keep it simple**
 
+other useful arguments for tables:
 
-```{r echo=TRUE, message=FALSE, cache=TRUE}
-library(readxl)
-library(kableExtra)
-timeline <- read_excel(here('tables', 
-                            'timeline.xlsx'))
-kable(timeline, 
-      align=(c('c', 'l')), 
-      valign="middle") %>%
-    kable_styling(bootstrap_options = c("striped", 
-                                        "hover", 
-                                        "condensed", 
-                                        "responsive")) %>%
-    row_spec(0, 
-             align = "c") %>%
-    column_spec(1, bold = T, 
-                border_right = T) %>%
-    collapse_rows(columns = 1:2)
+* `column_spec(2, width = "9cm")` = set column width
+
+* `kable(timeline,longtable = T....`= allow the table to go over multiple pages
+
+For example...
+\newpage
+```{r kable, echo=TRUE}
+read_excel(here("tables", "policy.xlsx"))%>%
+  mutate_all(~ replace_na(.x, "")) %>%
+  # booktab = T gives us a pretty APA-ish table
+  knitr::kable("latex", longtable = T, booktabs = T, 
+               caption = 'Relevant influential international, metropolitan and local UHI and urban expansion policies, strategies and assessments (with publication date) referred to in this paper. * Denotes documents that lack specific UHI related policy but recognise the value of maintaining vegetation.')%>% 
+  kable_styling(position = "center", full_width = T)%>%
+  # any specifc row changes you want
+    row_spec(.,
+  row=c(0,1,8, 18),
+  bold = TRUE)%>%
+  column_spec(1, width = "14cm")%>%
+  row_spec(c(1, 8, 18), hline_after = T)
 ```
+
+**Note** if you see the caption in the `.pdf` version it goes off the side of the page --- this is the reason why you don't show code in a `.pdf`. If you ever had to you could just seperate the string into sections and at the start use `paste("hello","this","is","a","string", sep=" ")`
+
+Now remember to cross reference this table, it would be...Table `\@ref(tab:kable)`, giving Table \@ref(tab:kable)
 
 ## Hosting the book
 
@@ -76,11 +89,8 @@ To do so you need to set up a few things
 
 1. Go to the `_bookdown.yml` file and make sue that that you have this line of code: `output_dir: docs` (it should be there)
 1. In the same file make sure your `book_filename` doesn't have any spaces use `-` or `_` e.g. `CASA-Thesis`
-1. Build your book locally
+1. Build your book locally, close the preview window
 1. Save, stage changes, commit and then push to GitHub
 1. On your GitHub repository > settings > GitHub pages > select the source as main and the folder as docs
-
-
-
-
+1. Make sure you build your `.pdf` and then your `gitbook` for the latest `.pdf` to be a download option on the website.
 

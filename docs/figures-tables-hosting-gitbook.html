@@ -53,6 +53,9 @@
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -242,7 +245,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 4</span> Figures, tables, hosting GitBook</h1>
 <p>This section is going to focus including figures and creating tables</p>
 <div class="figure"><span id="fig:methodsflow"></span>
-<img src="general_images/example_flow.png" alt="Summary of methdological procedure for (a).... and (b)...." width="100pt" />
+<img src="general_images/example_flow.png" alt="Summary of methdological procedure for (a).... and (b)...." width="300pt" />
 <p class="caption">
 Figure 4.1: Summary of methdological procedure for (a)…. and (b)….
 </p>
@@ -251,8 +254,12 @@ Figure 4.1: Summary of methdological procedure for (a)…. and (b)….
 <h2><span class="header-section-number">4.1</span> Including figures and tables</h2>
 <div id="figures-1" class="section level3" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Figures</h3>
-<p>To include the figure above use the code <code>knitr::include_graphics(here::here('general_images','example_flow.png'))</code> within a code chunk. In the chunk options you can specify the width and figure captions e.g. <code>out.width="100pt", fig.cap="Summary of methdological procedure for (a).... and (b)...."</code>. However, if you do show the code with <code>echo=TRUE</code> then you can’t specify the <code>out.width</code>.</p>
-<p>For making flow diagrams have a look at</p>
+<p>To include the figure above use the code:</p>
+<p><code>knitr::include_graphics(here::here('general_images','example_flow.png'))</code></p>
+<p>within a code chunk. In the chunk options you can specify the width and figure captions e.g. </p>
+<p><code>out.width="100pt", fig.cap="Summary of methdological procedure for (a).... and (b)...."</code>.</p>
+<p>However, if you do show the code with <code>echo=TRUE</code> then you can’t specify the <code>out.width</code>.</p>
+<p>For making flow diagrams have a look at:</p>
 <ol style="list-style-type: decimal">
 <li>Lucidchart</li>
 <li>Draw.io</li>
@@ -316,115 +323,29 @@ DTM
 </tr>
 </tbody>
 </table>
-<p>Here is a more advanced table from GIS assignment outline. Notice that in the excel file where i wanted the same data replicated in the table here (e.g. weeks 2 and 3) i simply copied it in a new cell - in other words each tow has all the information and then it’s styled in R.</p>
 <p>You do loads of things with kabble including adding small visulisations within the table - <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html#Overview">consult the documentation for more info</a>.</p>
-<p>If in doubt, keep it simple.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="figures-tables-hosting-gitbook.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb5-2"><a href="figures-tables-hosting-gitbook.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb5-3"><a href="figures-tables-hosting-gitbook.html#cb5-3" aria-hidden="true" tabindex="-1"></a>timeline <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&#39;tables&#39;</span>, </span>
-<span id="cb5-4"><a href="figures-tables-hosting-gitbook.html#cb5-4" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;timeline.xlsx&#39;</span>))</span>
-<span id="cb5-5"><a href="figures-tables-hosting-gitbook.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(timeline, </span>
-<span id="cb5-6"><a href="figures-tables-hosting-gitbook.html#cb5-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">align=</span>(<span class="fu">c</span>(<span class="st">&#39;c&#39;</span>, <span class="st">&#39;l&#39;</span>)), </span>
-<span id="cb5-7"><a href="figures-tables-hosting-gitbook.html#cb5-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">valign=</span><span class="st">&quot;middle&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-8"><a href="figures-tables-hosting-gitbook.html#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, </span>
-<span id="cb5-9"><a href="figures-tables-hosting-gitbook.html#cb5-9" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;hover&quot;</span>, </span>
-<span id="cb5-10"><a href="figures-tables-hosting-gitbook.html#cb5-10" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;condensed&quot;</span>, </span>
-<span id="cb5-11"><a href="figures-tables-hosting-gitbook.html#cb5-11" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;responsive&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb5-12"><a href="figures-tables-hosting-gitbook.html#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row_spec</span>(<span class="dv">0</span>, </span>
-<span id="cb5-13"><a href="figures-tables-hosting-gitbook.html#cb5-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">&quot;c&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-14"><a href="figures-tables-hosting-gitbook.html#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> T, </span>
-<span id="cb5-15"><a href="figures-tables-hosting-gitbook.html#cb5-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">border_right =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb5-16"><a href="figures-tables-hosting-gitbook.html#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">collapse_rows</span>(<span class="at">columns =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
-<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:center;text-align: center;">
-Week
-</th>
-<th style="text-align:left;text-align: center;">
-Activity
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-1
-</td>
-<td style="text-align:left;">
-Undertake wider data exploration and reading to find a topic you might be interested in progressing with. Start with a data search first to avoid proposing a research area then forcing potentially unsuitable data to fit it.
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-2
-</td>
-<td style="text-align:left;vertical-align: middle !important;" rowspan="2">
-Assess the validity of your topic in terms of data suitability, then sketch out an introduction and literature review including academic and policy documents (or any reputable source).
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-3
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-4
-</td>
-<td style="text-align:left;">
-Based on your knowledge of available data and literature compose a research question or hypothesis. Review your introduction and literature review to ensure you are guiding the reader to understanding the importance of the project.
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-5
-</td>
-<td style="text-align:left;">
-Create a draft of the methodology / initial ideas that can be expanded on as we move to more advanced analysis in the second part of the course.
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-6
-</td>
-<td style="text-align:left;vertical-align: middle !important;" rowspan="4">
-Learn and practice analysis from the course and identify appropriate techniques (from wider research) that might be applicable/relevant to your data. Conduct an extensive methodological review – this could include analysis from within academic literature and/or government departments (or any reputable source).
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-7
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-8
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-9
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-10 to deadline
-</td>
-<td style="text-align:left;">
-Undertake your analysis, then write up your discussion and conclusion (that includes recommendations)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;border-right:1px solid;">
-Before submission
-</td>
-<td style="text-align:left;">
-Check that your assignment follows the standard model of scientific investigation. You may need to update your introduction and literature review based on the analysis you undertook to ensure a seamless narrative throughout.
-</td>
-</tr>
-</tbody>
-</table>
+<p><strong>If in doubt, keep it simple</strong></p>
+<p>other useful arguments for tables:</p>
+<ul>
+<li><p><code>column_spec(2, width = "9cm")</code> = set column width</p></li>
+<li><p><code>kable(timeline,longtable = T....</code>= allow the table to go over multiple pages</p></li>
+</ul>
+<p>For example…
+</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="figures-tables-hosting-gitbook.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;tables&quot;</span>, <span class="st">&quot;policy.xlsx&quot;</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="figures-tables-hosting-gitbook.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_all</span>(<span class="sc">~</span> <span class="fu">replace_na</span>(.x, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="figures-tables-hosting-gitbook.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># booktab = T gives us a pretty APA-ish table</span></span>
+<span id="cb5-4"><a href="figures-tables-hosting-gitbook.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="st">&quot;latex&quot;</span>, <span class="at">longtable =</span> T, <span class="at">booktabs =</span> T, </span>
+<span id="cb5-5"><a href="figures-tables-hosting-gitbook.html#cb5-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">caption =</span> <span class="st">&#39;Relevant influential international, metropolitan and local UHI and urban expansion policies, strategies and assessments (with publication date) referred to in this paper. * Denotes documents that lack specific UHI related policy but recognise the value of maintaining vegetation.&#39;</span>)<span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="figures-tables-hosting-gitbook.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">position =</span> <span class="st">&quot;center&quot;</span>, <span class="at">full_width =</span> T)<span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="figures-tables-hosting-gitbook.html#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># any specifc row changes you want</span></span>
+<span id="cb5-8"><a href="figures-tables-hosting-gitbook.html#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row_spec</span>(.,</span>
+<span id="cb5-9"><a href="figures-tables-hosting-gitbook.html#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">row=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">8</span>, <span class="dv">18</span>),</span>
+<span id="cb5-10"><a href="figures-tables-hosting-gitbook.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">bold =</span> <span class="cn">TRUE</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb5-11"><a href="figures-tables-hosting-gitbook.html#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">width =</span> <span class="st">&quot;14cm&quot;</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb5-12"><a href="figures-tables-hosting-gitbook.html#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">18</span>), <span class="at">hline_after =</span> T)</span></code></pre></div>
+<p><strong>Note</strong> if you see the caption in the <code>.pdf</code> version it goes off the side of the page — this is the reason why you don’t show code in a <code>.pdf</code>. If you ever had to you could just seperate the string into sections and at the start use <code>paste("hello","this","is","a","string", sep=" ")</code></p>
+<p>Now remember to cross reference this table, it would be…Table <code>\@ref(tab:kable)</code>, giving Table <a href="#tab:kable"><strong>??</strong></a></p>
 </div>
 </div>
 <div id="hosting-the-book" class="section level2" number="4.2">
@@ -434,9 +355,10 @@ Check that your assignment follows the standard model of scientific investigatio
 <ol style="list-style-type: decimal">
 <li>Go to the <code>_bookdown.yml</code> file and make sue that that you have this line of code: <code>output_dir: docs</code> (it should be there)</li>
 <li>In the same file make sure your <code>book_filename</code> doesn’t have any spaces use <code>-</code> or <code>_</code> e.g. <code>CASA-Thesis</code></li>
-<li>Build your book locally</li>
+<li>Build your book locally, close the preview window</li>
 <li>Save, stage changes, commit and then push to GitHub</li>
 <li>On your GitHub repository &gt; settings &gt; GitHub pages &gt; select the source as main and the folder as docs</li>
+<li>Make sure you build your <code>.pdf</code> and then your <code>gitbook</code> for the latest <code>.pdf</code> to be a download option on the website.</li>
 </ol>
 
 </div>

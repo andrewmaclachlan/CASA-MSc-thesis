@@ -37,13 +37,14 @@ Now to cite the table it's just Table `\@ref(tab:nice-tab)`, giving Table \@ref(
 
 ## Citing documents 
 
-To cite documents they need to be in a `.bib` file, that must be loaded within your `index.Rmd`. Have a look at my `index.Rmd` and you will see there are three such files, two that were provided as an example here `book.bib`,  `packages.bib` and one that i added `test.bib`. I can simply cite the papers within them using the citation key e.g. `[@xie2015]` giving [@xie2015]. Make sure you remove the ones you don't need.
+To cite documents they need to be in a `.bib` file, that must be loaded within your `index.Rmd` with the `bibliography:` argument. Have a look at my `index.Rmd` and you will see there are three such files, two that were provided as an example here `book.bib`,  `packages.bib` and one that i added `test.bib`. I can simply cite the papers within them using the citation key e.g. `[@xie2015]` giving [@xie2015]. Make sure you remove the ones you don't need.
 
 If you remove the citation from the `[]` it will give @xie2015. 
 
 When citing multiple authors use a ; `[@xie2015; @maclachlan2017urban]` = [@xie2015; @maclachlan2017urban]
 
 To remove the author add a minus sign `-@maclachlan2017urban` = -@maclachlan2017urban
+
 
 ## Citing using software
 

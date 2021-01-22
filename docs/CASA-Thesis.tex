@@ -115,6 +115,7 @@
 \raggedbottom
 \usepackage[nottoc,notlot,notlof]{tocbibind}
 \usepackage{pdfpages}
+\usepackage[width=\textwidth]{caption}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -447,7 +448,7 @@ Now to cite the table it's just Table \texttt{\textbackslash{}@ref(tab:nice-tab)
 \hypertarget{citing-documents}{%
 \section{Citing documents}\label{citing-documents}}
 
-To cite documents they need to be in a \texttt{.bib} file, that must be loaded within your \texttt{index.Rmd}. Have a look at my \texttt{index.Rmd} and you will see there are three such files, two that were provided as an example here \texttt{book.bib}, \texttt{packages.bib} and one that i added \texttt{test.bib}. I can simply cite the papers within them using the citation key e.g.~\texttt{{[}@xie2015{]}} giving \autocite{xie2015}. Make sure you remove the ones you don't need.
+To cite documents they need to be in a \texttt{.bib} file, that must be loaded within your \texttt{index.Rmd} with the \texttt{bibliography:} argument. Have a look at my \texttt{index.Rmd} and you will see there are three such files, two that were provided as an example here \texttt{book.bib}, \texttt{packages.bib} and one that i added \texttt{test.bib}. I can simply cite the papers within them using the citation key e.g.~\texttt{{[}@xie2015{]}} giving \autocite{xie2015}. Make sure you remove the ones you don't need.
 
 If you remove the citation from the \texttt{{[}{]}} it will give \textcite{xie2015}.
 
@@ -557,7 +558,7 @@ Instead you could just include the reference at the end of the quote, using the 
 This section is going to focus including figures and creating tables
 
 \begin{figure}
-\includegraphics[width=100pt]{C:/Users/Andy/Desktop/CASA_thesis_template/general_images/example_flow} \caption{Summary of methdological procedure for (a).... and (b)....}\label{fig:methodsflow}
+\includegraphics[width=300pt]{C:/Users/Andy/Desktop/CASA_thesis_template/general_images/example_flow} \caption{Summary of methdological procedure for (a).... and (b)....}\label{fig:methodsflow}
 \end{figure}
 
 \hypertarget{including-figures-and-tables}{%
@@ -566,9 +567,17 @@ This section is going to focus including figures and creating tables
 \hypertarget{figures-1}{%
 \subsection{Figures}\label{figures-1}}
 
-To include the figure above use the code \texttt{knitr::include\_graphics(here::here(\textquotesingle{}general\_images\textquotesingle{},\textquotesingle{}example\_flow.png\textquotesingle{}))} within a code chunk. In the chunk options you can specify the width and figure captions e.g.~\texttt{out.width="100pt",\ fig.cap="Summary\ of\ methdological\ procedure\ for\ (a)....\ and\ (b)...."}. However, if you do show the code with \texttt{echo=TRUE} then you can't specify the \texttt{out.width}.
+To include the figure above use the code:
 
-For making flow diagrams have a look at
+\texttt{knitr::include\_graphics(here::here(\textquotesingle{}general\_images\textquotesingle{},\textquotesingle{}example\_flow.png\textquotesingle{}))}
+
+within a code chunk. In the chunk options you can specify the width and figure captions e.g.~
+
+\texttt{out.width="100pt",\ fig.cap="Summary\ of\ methdological\ procedure\ for\ (a)....\ and\ (b)...."}.
+
+However, if you do show the code with \texttt{echo=TRUE} then you can't specify the \texttt{out.width}.
+
+For making flow diagrams have a look at:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -619,63 +628,90 @@ Digital Terrain Model & DTM\\
 \end{tabular}
 \end{table}
 
-Here is a more advanced table from GIS assignment outline. Notice that in the excel file where i wanted the same data replicated in the table here (e.g.~weeks 2 and 3) i simply copied it in a new cell - in other words each tow has all the information and then it's styled in R.
-
 You do loads of things with kabble including adding small visulisations within the table - \href{https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html\#Overview}{consult the documentation for more info}.
 
-If in doubt, keep it simple.
+\textbf{If in doubt, keep it simple}
+
+other useful arguments for tables:
+
+\begin{itemize}
+\item
+  \texttt{column\_spec(2,\ width\ =\ "9cm")} = set column width
+\item
+  \texttt{kable(timeline,longtable\ =\ T....}= allow the table to go over multiple pages
+\end{itemize}
+
+For example\ldots{}
+\newpage
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(readxl)}
-\FunctionTok{library}\NormalTok{(kableExtra)}
-\NormalTok{timeline }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{\textquotesingle{}tables\textquotesingle{}}\NormalTok{, }
-                            \StringTok{\textquotesingle{}timeline.xlsx\textquotesingle{}}\NormalTok{))}
-\FunctionTok{kable}\NormalTok{(timeline, }
-      \AttributeTok{align=}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{)), }
-      \AttributeTok{valign=}\StringTok{"middle"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{bootstrap\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }
-                                        \StringTok{"hover"}\NormalTok{, }
-                                        \StringTok{"condensed"}\NormalTok{, }
-                                        \StringTok{"responsive"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{row\_spec}\NormalTok{(}\DecValTok{0}\NormalTok{, }
-             \AttributeTok{align =} \StringTok{"c"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{column\_spec}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{bold =}\NormalTok{ T, }
-                \AttributeTok{border\_right =}\NormalTok{ T) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{collapse\_rows}\NormalTok{(}\AttributeTok{columns =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{)}
+\FunctionTok{read\_excel}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"tables"}\NormalTok{, }\StringTok{"policy.xlsx"}\NormalTok{))}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate\_all}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{replace\_na}\NormalTok{(.x, }\StringTok{""}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# booktab = T gives us a pretty APA{-}ish table}
+\NormalTok{  knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}\StringTok{"latex"}\NormalTok{, }\AttributeTok{longtable =}\NormalTok{ T, }\AttributeTok{booktabs =}\NormalTok{ T, }
+               \AttributeTok{caption =} \StringTok{\textquotesingle{}Relevant influential international, metropolitan and local UHI and urban expansion policies, strategies and assessments (with publication date) referred to in this paper. * Denotes documents that lack specific UHI related policy but recognise the value of maintaining vegetation.\textquotesingle{}}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{position =} \StringTok{"center"}\NormalTok{, }\AttributeTok{full\_width =}\NormalTok{ T)}\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# any specifc row changes you want}
+    \FunctionTok{row\_spec}\NormalTok{(.,}
+  \AttributeTok{row=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{8}\NormalTok{, }\DecValTok{18}\NormalTok{),}
+  \AttributeTok{bold =} \ConstantTok{TRUE}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{column\_spec}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{width =} \StringTok{"14cm"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{row\_spec}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{18}\NormalTok{), }\AttributeTok{hline\_after =}\NormalTok{ T)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{table}[H]
-\centering
-\begin{tabular}[middle]{>{\bfseries}c||l}
-\hline
-\multicolumn{1}{c}{Week} & \multicolumn{1}{c}{Activity}\\
-\hline
-1 & Undertake wider data exploration and reading to find a topic you might be interested in progressing with. Start with a data search first to avoid proposing a research area then forcing potentially unsuitable data to fit it.\\
-\cline{1-2}
-2 & \\
-\cline{1-1}
-3 & \multirow{-2}{*}{\raggedright\arraybackslash Assess the validity of your topic in terms of data suitability, then sketch out an introduction and literature review including academic and policy documents (or any reputable source).}\\
-\cline{1-2}
-4 & Based on your knowledge of available data and literature compose a research question or hypothesis. Review your introduction and literature review to ensure you are guiding the reader to understanding the importance of the project.\\
-\cline{1-2}
-5 & Create a draft of the methodology / initial ideas that can be expanded on as we move to more advanced analysis in the second part of the course.\\
-\cline{1-2}
-6 & \\
-\cline{1-1}
-7 & \\
-\cline{1-1}
-8 & \\
-\cline{1-1}
-9 & \multirow{-4}{*}{\raggedright\arraybackslash Learn and practice analysis from the course and identify appropriate techniques (from wider research) that might be applicable/relevant to your data. Conduct an extensive methodological review – this could include analysis from within academic literature and/or government departments (or any reputable source).}\\
-\cline{1-2}
-10 to deadline & Undertake your analysis, then write up your discussion and conclusion (that includes recommendations)\\
-\cline{1-2}
-Before submission & Check that your assignment follows the standard model of scientific investigation. You may need to update your introduction and literature review based on the analysis you undertook to ensure a seamless narrative throughout.\\
-\hline
-\end{tabular}
-\end{table}
+\begin{longtabu} to \linewidth {>{\raggedright\arraybackslash}p{14cm}}
+\caption{\label{tab:kable}Relevant influential international, metropolitan and local UHI and urban expansion policies, strategies and assessments (with publication date) referred to in this paper. * Denotes documents that lack specific UHI related policy but recognise the value of maintaining vegetation.}\\
+\toprule
+\textbf{Policy}\\
+\midrule
+\textbf{International}\\
+\midrule
+United Nations The World Cities in 2016 (2016)\\
+United Nations New Urban Agenda (2017)\\
+ARUP City Resilience Framework (2015)\\
+United Nations International Strategy for Disaster Reduction Sendai Framework (2015)\\
+\addlinespace
+Universal Sustainable Development Goals (2015)\\
+Biological Diversity, Cities and Biodiversity Outlook (2012)\\
+\textbf{Metropolitan}\\
+\midrule
+AECOM Australia, Economic Assessment of the Urban Heat Island Effect, Melbourne (2012)\\
+The Spatial Development Strategy For Greater London (2017)\\
+\addlinespace
+Western Australia Planning Commission, Perth and Peel @3.5 million (2015)\\
+City of Johannesburg Metropolitan Municipality, Spatial Development Framework 2040 (2016)\\
+Western Australian Planning Commission, Directions 2031 and beyond: metropolitan planning beyond the horizon (2010)\\
+Western Australian Planning Commission, Development Control Policy 2.3 Public Open Space in Residential Areas (2002)\\
+Plan For The Metropolitan Region Perth And Fremantle (1955)\\
+\addlinespace
+Singapore Government, Open Space Provision (2011)\\
+Western Australian Planning Commission, Metropolitan Region Scheme Text (2006)\\
+\textbf{Local}\\
+\midrule
+USA Environmental Protection Agency, Reducing Urban Heat Islands Compendium of Strategies Trees and Vegetation (2008)\\
+USA Environmental Protection Agency, Reducing Urban Heat Islands Compendium of Strategies Urban Heat Island Basics (2008)\\
+\addlinespace
+USA Environmental Protection Agency, Reducing Urban Heat Islands, Compendium of Strategies Heat Island Reduction Activities (2008)\\
+City of Stirling, Stirling Urban Forest Community Consultation (2017)\\
+City of Fremantle, One Planet Fremantle Strategy 2014/2015 - 2019/2020, 1–12 (2014)\\
+Metropolitan Redevelopment Authority, Subiaco Redevelopment Scheme (2013)\\
+Metropolitan Redevelopment Authority, Subiaco Redevelopment Scheme 2 (2017)\\
+\addlinespace
+City of Bayswater, Urban Forest Strategy (2017)\\
+City of Perth, Urban Forest Plan 2016-2036 (2006)\\
+City of Fremantle, City of Fremantle Urban Forest Plan (2017)\\
+City of Fremantle, Annual Budget 2016-17 (2016)\\
+City of Wanneroo, Street Tree Policy (2016)*\\
+\addlinespace
+City of Subiaco, Plant Pathogen Management Plan(2015)*\\
+\bottomrule
+\end{longtabu}
+
+\textbf{Note} if you see the caption in the \texttt{.pdf} version it goes off the side of the page --- this is the reason why you don't show code in a \texttt{.pdf}. If you ever had to you could just seperate the string into sections and at the start use \texttt{paste("hello","this","is","a","string",\ sep="\ ")}
+
+Now remember to cross reference this table, it would be\ldots Table \texttt{\textbackslash{}@ref(tab:kable)}, giving Table \ref{tab:kable}
 
 \hypertarget{hosting-the-book}{%
 \section{Hosting the book}\label{hosting-the-book}}
@@ -692,11 +728,13 @@ To do so you need to set up a few things
 \item
   In the same file make sure your \texttt{book\_filename} doesn't have any spaces use \texttt{-} or \texttt{\_} e.g.~\texttt{CASA-Thesis}
 \item
-  Build your book locally
+  Build your book locally, close the preview window
 \item
   Save, stage changes, commit and then push to GitHub
 \item
   On your GitHub repository \textgreater{} settings \textgreater{} GitHub pages \textgreater{} select the source as main and the folder as docs
+\item
+  Make sure you build your \texttt{.pdf} and then your \texttt{gitbook} for the latest \texttt{.pdf} to be a download option on the website.
 \end{enumerate}
 
 \hypertarget{discussion}{%
