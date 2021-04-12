@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.12)  12 APR 2021 17:29
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.12)  12 APR 2021 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1514,10 +1514,17 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 Chapter 1.
 [1
 
-] [2] [3] [4] [5] [6] [7] [8]
+] [2] [3] [4] [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+\TU/lmr/m/n/12 video: []$[][][][][] [] [] [] [][][] [] [][][][][][][] [] [][][]
+ [] [][][][][][][][][] [] [][][][][][][][][][][] [][] [][][][] [] [][][][] [][]
+ [][][][][][][] [][]
+ []
+
+[8]
 Chapter 2.
 
-Overfull \hbox (7.43431pt too wide) in paragraph at lines 443--444
+Overfull \hbox (7.43431pt too wide) in paragraph at lines 445--446
 []\TU/lmr/m/n/12 Just reference the label we gave to the section….see Chapter \
 TU/lmtt/m/n/12 \@ref(crossref)
  []
@@ -1528,42 +1535,42 @@ TU/lmtt/m/n/12 \@ref(crossref)
 File: CASA-Thesis_files/figure-latex/nice-fig-1.pdf Graphic file (type pdf)
 <use CASA-Thesis_files/figure-latex/nice-fig-1.pdf>
 
-Underfull \hbox (badness 2443) in paragraph at lines 458--459
+Underfull \hbox (badness 2443) in paragraph at lines 460--461
 []\TU/lmr/m/n/12 To cross reference this just include Figure \TU/lmtt/m/n/12 \@
 ref(fig:nice-fig) \TU/lmr/m/n/12 which
  []
 
 [10] [11]
-Underfull \hbox (badness 2080) in paragraph at lines 532--534
+Underfull \hbox (badness 2080) in paragraph at lines 534--536
 []\TU/lmr/m/n/12 Download the latest release — the \TU/lmtt/m/n/12 .xpi \TU/lmr
 /m/n/12 file: []$[][][][][] [] [] [] [][][][][][] [] [][][] []
  []
 
 [12]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 564.
+(Font)              scaled to size 5.0pt on input line 566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 564.
+(Font)              scaled to size 5.00046pt on input line 566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 564.
+(Font)              scaled to size 4.99947pt on input line 566.
 [13]
 Chapter 3.
 [14
 
 ]
-Underfull \hbox (badness 2302) in paragraph at lines 600--601
+Underfull \hbox (badness 2302) in paragraph at lines 602--603
 []\TU/lmr/m/n/12 You can also provide an attribution at the footer of the quote
  using
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 600--601
+Underfull \hbox (badness 1472) in paragraph at lines 602--603
 \TU/lmtt/m/n/12 tufte::quote_-footer()\TU/lmr/m/n/12 , either a name or a refer
 ence. You’ll need to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
+Underfull \hbox (badness 10000) in paragraph at lines 602--603
 \TU/lmtt/m/n/12 tufte::quote_-footer([]--- Joe Martin[]) \TU/lmr/m/n/12 or \TU/
 lmtt/m/n/12 > [include only r here]
  []
@@ -1576,31 +1583,31 @@ g Graphic file (type bmp)
 [16
 
 ]
-Overfull \hbox (29.83423pt too wide) in paragraph at lines 635--636
+Overfull \hbox (29.83423pt too wide) in paragraph at lines 637--638
 []\TU/lmtt/m/n/12 knitr::include_-graphics(here::here([]general_-images[],[]exa
 mple_-flow.png[])) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
+Underfull \hbox (badness 10000) in paragraph at lines 641--642
 []\TU/lmtt/m/n/12 out.width="100pt", fig.cap="Summary of methdological procedur
 e for
  []
 
 [17] [18] [19] [20]
-Overfull \hbox (0.35112pt too wide) in paragraph at lines 777--778
+Overfull \hbox (0.35112pt too wide) in paragraph at lines 779--780
 []\TU/lmr/m/n/12 Now remember to cross reference this table, it would be…Table 
 \TU/lmtt/m/n/12 \@ref(tab:kable)\TU/lmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 4036) in paragraph at lines 794--796
+Underfull \hbox (badness 4036) in paragraph at lines 796--798
 []\TU/lmr/m/n/12 Go to the \TU/lmtt/m/n/12 _-output.yml \TU/lmr/m/n/12 file and
  change the \TU/lmtt/m/n/12 edit \TU/lmr/m/n/12 argument to
  []
 
 
-Overfull \hbox (188.79509pt too wide) in paragraph at lines 794--796
+Overfull \hbox (188.79509pt too wide) in paragraph at lines 796--798
 \TU/lmtt/m/n/12 YOURREPO/edit/main/%s\TU/lmr/m/n/12 , here it’s \TU/lmtt/m/n/12
  https://github.com/andrewmaclachlan/CASA-MSc-thesis/edit/main/%s 
  []

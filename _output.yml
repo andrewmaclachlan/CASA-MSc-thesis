@@ -23,4 +23,4 @@ bookdown::pdf_book:
   citation_package: biblatex 
   keep_tex: yes
 #bookdown::epub_book: default
-word_document: default
+#word_document: default

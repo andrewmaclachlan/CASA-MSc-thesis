@@ -169,3 +169,5 @@ You can also interact with `git`
 
 * `renv::history()` --- finds the commits where the lock file changed
 * `renv::revert(commit = "id")` --- changes the lock file back to what it was at a commit
+
+For more information watch renv: Project Environments for R introduction video: https://www.rstudio.com/resources/rstudioconf-2020/renv-project-environments-for-r/ 
