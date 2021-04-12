@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Figures, tables, hosting GitBook | CASA dissertation using Bookdown</title>
   <meta name="description" content="This dissertation is submitted in part requirement for the MSc (Or MRes) in the Centre for Advanced Spatial Analysis, Bartlett Faculty of the Built Environment, UCL" />
-  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.10 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Figures, tables, hosting GitBook | CASA dissertation using Bookdown" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2021-01-22" />
+<meta name="date" content="2021-04-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -178,6 +178,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.8" data-path="bookdown-basics.html"><a href="bookdown-basics.html#word-count"><i class="fa fa-check"></i><b>1.8</b> Word count</a></li>
 <li class="chapter" data-level="1.9" data-path="bookdown-basics.html"><a href="bookdown-basics.html#adding-a-pdf"><i class="fa fa-check"></i><b>1.9</b> Adding a pdf</a></li>
 <li class="chapter" data-level="1.10" data-path="bookdown-basics.html"><a href="bookdown-basics.html#writing-code"><i class="fa fa-check"></i><b>1.10</b> Writing code</a></li>
+<li class="chapter" data-level="1.11" data-path="bookdown-basics.html"><a href="bookdown-basics.html#package-reproducibility"><i class="fa fa-check"></i><b>1.11</b> Package reproducibility</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="crossref.html"><a href="crossref.html"><i class="fa fa-check"></i><b>2</b> Cross referencing</a>
 <ul>
@@ -336,7 +337,7 @@ DTM
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="figures-tables-hosting-gitbook.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;tables&quot;</span>, <span class="st">&quot;policy.xlsx&quot;</span>))<span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="figures-tables-hosting-gitbook.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_all</span>(<span class="sc">~</span> <span class="fu">replace_na</span>(.x, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb5-3"><a href="figures-tables-hosting-gitbook.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># booktab = T gives us a pretty APA-ish table</span></span>
-<span id="cb5-4"><a href="figures-tables-hosting-gitbook.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="st">&quot;latex&quot;</span>, <span class="at">longtable =</span> T, <span class="at">booktabs =</span> T, </span>
+<span id="cb5-4"><a href="figures-tables-hosting-gitbook.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">longtable =</span> T, <span class="at">booktabs =</span> T, </span>
 <span id="cb5-5"><a href="figures-tables-hosting-gitbook.html#cb5-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">caption =</span> <span class="st">&#39;Relevant influential international, metropolitan and local UHI and urban expansion policies, strategies and assessments (with publication date) referred to in this paper. * Denotes documents that lack specific UHI related policy but recognise the value of maintaining vegetation.&#39;</span>)<span class="sc">%&gt;%</span> </span>
 <span id="cb5-6"><a href="figures-tables-hosting-gitbook.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">position =</span> <span class="st">&quot;center&quot;</span>, <span class="at">full_width =</span> T)<span class="sc">%&gt;%</span></span>
 <span id="cb5-7"><a href="figures-tables-hosting-gitbook.html#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># any specifc row changes you want</span></span>
@@ -345,8 +346,177 @@ DTM
 <span id="cb5-10"><a href="figures-tables-hosting-gitbook.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">bold =</span> <span class="cn">TRUE</span>)<span class="sc">%&gt;%</span></span>
 <span id="cb5-11"><a href="figures-tables-hosting-gitbook.html#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">width =</span> <span class="st">&quot;14cm&quot;</span>)<span class="sc">%&gt;%</span></span>
 <span id="cb5-12"><a href="figures-tables-hosting-gitbook.html#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">18</span>), <span class="at">hline_after =</span> T)</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:kable">Table 4.1: </span>Relevant influential international, metropolitan and local UHI and urban expansion policies, strategies and assessments (with publication date) referred to in this paper. * Denotes documents that lack specific UHI related policy but recognise the value of maintaining vegetation.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;">
+Policy
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;width: 14cm; ">
+International
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+United Nations The World Cities in 2016 (2016)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+United Nations New Urban Agenda (2017)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+ARUP City Resilience Framework (2015)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+United Nations International Strategy for Disaster Reduction Sendai Framework (2015)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Universal Sustainable Development Goals (2015)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Biological Diversity, Cities and Biodiversity Outlook (2012)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;width: 14cm; ">
+Metropolitan
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+AECOM Australia, Economic Assessment of the Urban Heat Island Effect, Melbourne (2012)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+The Spatial Development Strategy For Greater London (2017)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Western Australia Planning Commission, Perth and Peel <span class="citation">(<a href="#ref-3.5" role="doc-biblioref"><strong>3.5?</strong></a>)</span> million (2015)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+City of Johannesburg Metropolitan Municipality, Spatial Development Framework 2040 (2016)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Western Australian Planning Commission, Directions 2031 and beyond: metropolitan planning beyond the horizon (2010)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Western Australian Planning Commission, Development Control Policy 2.3 Public Open Space in Residential Areas (2002)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Plan For The Metropolitan Region Perth And Fremantle (1955)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Singapore Government, Open Space Provision (2011)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Western Australian Planning Commission, Metropolitan Region Scheme Text (2006)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;width: 14cm; ">
+Local
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+USA Environmental Protection Agency, Reducing Urban Heat Islands Compendium of Strategies Trees and Vegetation (2008)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+USA Environmental Protection Agency, Reducing Urban Heat Islands Compendium of Strategies Urban Heat Island Basics (2008)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+USA Environmental Protection Agency, Reducing Urban Heat Islands, Compendium of Strategies Heat Island Reduction Activities (2008)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+City of Stirling, Stirling Urban Forest Community Consultation (2017)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+City of Fremantle, One Planet Fremantle Strategy 2014/2015 - 2019/2020, 1–12 (2014)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Metropolitan Redevelopment Authority, Subiaco Redevelopment Scheme (2013)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+Metropolitan Redevelopment Authority, Subiaco Redevelopment Scheme 2 (2017)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+City of Bayswater, Urban Forest Strategy (2017)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+City of Perth, Urban Forest Plan 2016-2036 (2006)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+City of Fremantle, City of Fremantle Urban Forest Plan (2017)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+City of Fremantle, Annual Budget 2016-17 (2016)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+City of Wanneroo, Street Tree Policy (2016)*
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 14cm; ">
+City of Subiaco, Plant Pathogen Management Plan(2015)*
+</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Note</strong> if you see the caption in the <code>.pdf</code> version it goes off the side of the page — this is the reason why you don’t show code in a <code>.pdf</code>. If you ever had to you could just seperate the string into sections and at the start use <code>paste("hello","this","is","a","string", sep=" ")</code></p>
-<p>Now remember to cross reference this table, it would be…Table <code>\@ref(tab:kable)</code>, giving Table <a href="#tab:kable"><strong>??</strong></a></p>
+<p>Now remember to cross reference this table, it would be…Table <code>\@ref(tab:kable)</code>, giving Table <a href="figures-tables-hosting-gitbook.html#tab:kable">4.1</a></p>
 </div>
 </div>
 <div id="hosting-the-book" class="section level2" number="4.2">
@@ -394,6 +564,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": false
 },
 "fontsettings": {

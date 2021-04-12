@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Bookdown basics | CASA dissertation using Bookdown</title>
   <meta name="description" content="This dissertation is submitted in part requirement for the MSc (Or MRes) in the Centre for Advanced Spatial Analysis, Bartlett Faculty of the Built Environment, UCL" />
-  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.10 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Bookdown basics | CASA dissertation using Bookdown" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2021-01-22" />
+<meta name="date" content="2021-04-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -178,6 +178,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.8" data-path="bookdown-basics.html"><a href="bookdown-basics.html#word-count"><i class="fa fa-check"></i><b>1.8</b> Word count</a></li>
 <li class="chapter" data-level="1.9" data-path="bookdown-basics.html"><a href="bookdown-basics.html#adding-a-pdf"><i class="fa fa-check"></i><b>1.9</b> Adding a pdf</a></li>
 <li class="chapter" data-level="1.10" data-path="bookdown-basics.html"><a href="bookdown-basics.html#writing-code"><i class="fa fa-check"></i><b>1.10</b> Writing code</a></li>
+<li class="chapter" data-level="1.11" data-path="bookdown-basics.html"><a href="bookdown-basics.html#package-reproducibility"><i class="fa fa-check"></i><b>1.11</b> Package reproducibility</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="crossref.html"><a href="crossref.html"><i class="fa fa-check"></i><b>2</b> Cross referencing</a>
 <ul>
@@ -300,6 +301,7 @@ div.csl-indent {
 <p>I have copied in a basic styling with a CASA logo in the table of contents, you can replace this with other variations of the file if you wish or look at the <a href="https://github.com/rstudio/bookdown-demo">minimal bookdown example</a> or my <a href="https://github.com/andrewmaclachlan/CASA0005repo/blob/master/assets/style.css">CASA0005 .css file</a>.</p>
 <p>The best place to learn more about styling is the <a href="https://rstudio4edu.github.io/rstudio4edu-book/intro-bookdown.html">RStudio for education bookdown guide</a></p>
 <p>For the .pdf version in the <code>preamble.tex</code> we have to use LaTex code. I am by no means an expert in this. If you Google each package it will tell you what it does. There isn’t much here really, but all the header stuff refers to the headings at the top of each page.</p>
+<p>This tutorial from OurCoding Club explains some of the LaTex packages in a bit more detail: <a href="https://ourcodingclub.github.io/tutorials/rmarkdown-dissertation/" class="uri">https://ourcodingclub.github.io/tutorials/rmarkdown-dissertation/</a></p>
 </div>
 <div id="index-file" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> Index file</h2>
@@ -334,6 +336,35 @@ div.csl-indent {
 <div id="writing-code" class="section level2" number="1.10">
 <h2><span class="header-section-number">1.10</span> Writing code</h2>
 <p>Use one project for your thesis and another for your analysis. Don’t try and do it all in a thesis project. You can set your output folder from your main analysis project to the thesis project and then easily load the figures in.</p>
+</div>
+<div id="package-reproducibility" class="section level2" number="1.11">
+<h2><span class="header-section-number">1.11</span> Package reproducibility</h2>
+<p>Have you ever created an R script, come back to it 6 months later and wonder why it’s not working correctly? It’s probably because of package updates.</p>
+<p><code>renv</code> (pronounced R - env) can capture the packages used in your project and re-create your current library. You simply:</p>
+<ol style="list-style-type: decimal">
+<li>Create a new project - <code>renv::init()</code></li>
+<li>Create a snapshot - <code>renv::snapshot()</code></li>
+<li>Call the snapshot to load - <code>renv::restore()</code></li>
+</ol>
+<p>The package information and dependencies are stored in a <code>renv.lock</code> file.</p>
+<p>When R loads a package it gets it from the library path, which is where the packages live. Sometimes there are two libraries a system and a user library - use <code>.libPaths()</code>. The system library = the packages with R, the user library = packages you have installed.</p>
+<p>When you load a package it loads the first instance it comes across, user comes before system. To check - <code>find.package("tidyverse")</code></p>
+<p>All your projects use these paths! If you load different packages and versions of them + dependencies. E.g.</p>
+<ul>
+<li>Project 1 used <code>sf</code> version 0.9-8</li>
+<li>Project 2 used <code>sf</code> version 0.9-6</li>
+</ul>
+<p>Switching between projects would mean you have the wrong version as they use the same libraries.</p>
+<p><code>renv</code> - each project gets it’s own library! Project local libraries.</p>
+<p>When you use <code>renv::init()</code> the library path will be changed to a project local one.</p>
+<p>It will create a lock file that holds all the package information.</p>
+<p>To re-create my environment once you have forked and pulled this repository you would use <code>renv::restore()</code>.</p>
+<p>Of coruse some projects use the same package version — such as <code>tidyverse</code>, <code>renv</code> has a global cache of all the libraries. So there is a massive database of your libraries then each project library links it from there, meaning you don’t have 10 versions of the same <code>tidyverse</code>.</p>
+<p>You can also interact with <code>git</code></p>
+<ul>
+<li><code>renv::history()</code> — finds the commits where the lock file changed</li>
+<li><code>renv::revert(commit = "id")</code> — changes the lock file back to what it was at a commit</li>
+</ul>
 
 </div>
 </div>
@@ -366,6 +397,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": false
 },
 "fontsettings": {

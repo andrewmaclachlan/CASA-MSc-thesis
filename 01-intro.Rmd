@@ -80,6 +80,8 @@ The best place to learn more about styling is the [RStudio for education bookdow
 
 For the .pdf version in the `preamble.tex` we have to use LaTex code. I am by no means an expert in this. If you Google each package it will tell you what it does. There isn't much here really, but all the header stuff refers to the headings at the top of each page.
 
+This tutorial from OurCoding Club explains some of the LaTex packages in a bit more detail: https://ourcodingclub.github.io/tutorials/rmarkdown-dissertation/
+
 ## Index file
 
 Open up the `index.Rmd` this `Rmd` must be called first in the `_bookdown.yml` list. There are a number of options here, but i've set them all up to be compliant with the CASA thesis requirements. 
@@ -129,3 +131,41 @@ You'd need a condition around this like in the `preamble.Rmd` but a link is fine
 ## Writing code
 
 Use one project for your thesis and another for your analysis. Don't try and do it all in a thesis project. You can set your output folder from your main analysis project to the thesis project and then easily load the figures in.
+
+## Package reproducibility 
+
+Have you ever created an R script, come back to it 6 months later and wonder why it's not working correctly? It's probably because of package updates.  
+
+`renv` (pronounced R - env) can capture the packages used in your project and re-create your current library. You simply:
+
+1. Create a new project - `renv::init()`
+1. Create a snapshot - `renv::snapshot()`
+1. Call the snapshot to load - `renv::restore()`
+
+The package information and dependencies are stored in a `renv.lock` file.
+
+When R loads a package it gets it from the library path, which is where the packages live. Sometimes there are two libraries a system and a user library - use `.libPaths()`. The system library = the packages with R, the user library = packages you have installed. 
+
+When you load a package it loads the first instance it comes across, user comes before system. To check - `find.package("tidyverse")`
+
+All your projects use these paths! If you load different packages and versions of them + dependencies. E.g.
+
+* Project 1 used `sf` version 0.9-8
+* Project 2 used `sf` version 0.9-6
+
+Switching between projects would mean you have the wrong version as they use the same libraries. 
+
+`renv` - each project gets it's own library! Project local libraries. 
+
+When you use `renv::init()` the library path will be changed to a project local one. 
+
+It will create a lock file that holds all the package information. 
+
+To re-create my environment once you have forked and pulled this repository you would use `renv::restore()`. 
+
+Of coruse some projects use the same package version --- such as `tidyverse`, `renv` has a global cache of all the libraries. So there is a massive database of your libraries then each project library links it from there, meaning you don't have 10 versions of the same `tidyverse`.
+
+You can also interact with `git`
+
+* `renv::history()` --- finds the commits where the lock file changed
+* `renv::revert(commit = "id")` --- changes the lock file back to what it was at a commit

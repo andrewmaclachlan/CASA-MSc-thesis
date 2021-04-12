@@ -161,7 +161,7 @@ MSc (Or MRes) in the Centre for Advanced Spatial Analysis,\\
 Bartlett Faculty of the Built Environment, UCL\\
 ~\\
 Word count:}
-\date{2021-01-22}
+\date{2021-04-12}
 
 \begin{document}
 \maketitle
@@ -311,6 +311,8 @@ The best place to learn more about styling is the \href{https://rstudio4edu.gith
 
 For the .pdf version in the \texttt{preamble.tex} we have to use LaTex code. I am by no means an expert in this. If you Google each package it will tell you what it does. There isn't much here really, but all the header stuff refers to the headings at the top of each page.
 
+This tutorial from OurCoding Club explains some of the LaTex packages in a bit more detail: \url{https://ourcodingclub.github.io/tutorials/rmarkdown-dissertation/}
+
 \hypertarget{index-file}{%
 \section{Index file}\label{index-file}}
 
@@ -360,6 +362,62 @@ You'd need a condition around this like in the \texttt{preamble.Rmd} but a link 
 \section{Writing code}\label{writing-code}}
 
 Use one project for your thesis and another for your analysis. Don't try and do it all in a thesis project. You can set your output folder from your main analysis project to the thesis project and then easily load the figures in.
+
+\hypertarget{package-reproducibility}{%
+\section{Package reproducibility}\label{package-reproducibility}}
+
+Have you ever created an R script, come back to it 6 months later and wonder why it's not working correctly? It's probably because of package updates.
+
+\texttt{renv} (pronounced R - env) can capture the packages used in your project and re-create your current library. You simply:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create a new project - \texttt{renv::init()}
+\item
+  Create a snapshot - \texttt{renv::snapshot()}
+\item
+  Call the snapshot to load - \texttt{renv::restore()}
+\end{enumerate}
+
+The package information and dependencies are stored in a \texttt{renv.lock} file.
+
+When R loads a package it gets it from the library path, which is where the packages live. Sometimes there are two libraries a system and a user library - use \texttt{.libPaths()}. The system library = the packages with R, the user library = packages you have installed.
+
+When you load a package it loads the first instance it comes across, user comes before system. To check - \texttt{find.package("tidyverse")}
+
+All your projects use these paths! If you load different packages and versions of them + dependencies. E.g.
+
+\begin{itemize}
+\tightlist
+\item
+  Project 1 used \texttt{sf} version 0.9-8
+\item
+  Project 2 used \texttt{sf} version 0.9-6
+\end{itemize}
+
+Switching between projects would mean you have the wrong version as they use the same libraries.
+
+\texttt{renv} - each project gets it's own library! Project local libraries.
+
+When you use \texttt{renv::init()} the library path will be changed to a project local one.
+
+It will create a lock file that holds all the package information.
+
+To re-create my environment once you have forked and pulled this repository you would use \texttt{renv::restore()}.
+
+Of coruse some projects use the same package version --- such as \texttt{tidyverse}, \texttt{renv} has a global cache of all the libraries. So there is a massive database of your libraries then each project library links it from there, meaning you don't have 10 versions of the same \texttt{tidyverse}.
+
+You can also interact with \texttt{git}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{renv::history()} --- finds the commits where the lock file changed
+\item
+  \texttt{renv::revert(commit\ =\ "id")} --- changes the lock file back to what it was at a commit
+\end{itemize}
 
 \hypertarget{crossref}{%
 \chapter{Cross referencing}\label{crossref}}
@@ -654,7 +712,7 @@ For example\ldots{}
 \FunctionTok{read\_excel}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"tables"}\NormalTok{, }\StringTok{"policy.xlsx"}\NormalTok{))}\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{mutate\_all}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{replace\_na}\NormalTok{(.x, }\StringTok{""}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
   \CommentTok{\# booktab = T gives us a pretty APA{-}ish table}
-\NormalTok{  knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}\StringTok{"latex"}\NormalTok{, }\AttributeTok{longtable =}\NormalTok{ T, }\AttributeTok{booktabs =}\NormalTok{ T, }
+\NormalTok{  knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}\AttributeTok{longtable =}\NormalTok{ T, }\AttributeTok{booktabs =}\NormalTok{ T, }
                \AttributeTok{caption =} \StringTok{\textquotesingle{}Relevant influential international, metropolitan and local UHI and urban expansion policies, strategies and assessments (with publication date) referred to in this paper. * Denotes documents that lack specific UHI related policy but recognise the value of maintaining vegetation.\textquotesingle{}}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{position =} \StringTok{"center"}\NormalTok{, }\AttributeTok{full\_width =}\NormalTok{ T)}\SpecialCharTok{\%\textgreater{}\%}
   \CommentTok{\# any specifc row changes you want}
